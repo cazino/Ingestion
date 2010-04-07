@@ -130,8 +130,8 @@ class IDOLDelivery(AbstractDelivery):
         self.xml = minidom.parse(path + '/' + basename + '.xml')
         self.vendor_id = 256
         self.action = self._action()
+        self.release = self._release()
         if self.is_good():
-            self.release = self._release()
             self.artist = self._artist()  
             self.tracks = self._tracks()
             self.image = self._image()

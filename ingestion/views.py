@@ -24,7 +24,7 @@ class BatchView(object):
         self.ArtistFormSet = formset_factory(ArtistForm, formset=DataFormSet, extra=0)
         self.LabelFormSet = formset_factory(LabelForm, formset=DataFormSet, extra=0)
         self.ReleaseFormSet = formset_factory(ReleaseForm, formset=DataFormSet, extra=0)
-
+        self.bad_deliveries = list(self.batch.bad_deliveries())
     
 
 class BatchShow(BatchView):
@@ -46,7 +46,7 @@ class BatchShow(BatchView):
                                                               release.artist and release.artist.name or 'Compilation',
                                                              'label_name_hidden': release.label.name,}
                                                for release in self.batch.releases()], prefix='release')
-        self.bad_deliveries = list(self.batch.bad_deliveries())
+        
         
         
 class BatchProcessor(BatchView):
@@ -101,6 +101,7 @@ def batch_view(request):
     return render_to_response('batch-view.html', {'artist_formset': my_view.artist_formset,
                                                   'label_formset': my_view.label_formset,
                                                   'release_formset': my_view.release_formset,
+                                                  'bad_deliveries': my_view.bad_deliveries,
                                                   })
 """      
 def batch_process(request):

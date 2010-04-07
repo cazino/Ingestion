@@ -48,6 +48,17 @@
 }
 /******End report styles*******/
 
+/******* Bad deliveries *******/
+.bad-deliveries {
+    margin: 30px 0 0 0;
+}
+
+#bad-deliveries-title {
+    font-size: 15px;
+    font-weight: bold;
+}
+/***** End Bad deliveries *******/
+
 #submit-button {
     margin: 20px 0 0 0;
 }

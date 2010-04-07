@@ -94,7 +94,6 @@
 
 <div class="formset">
 <div class="section-title">Releases</div>
-
 {{release_formset.management_form}}
 {% for releaseform in release_formset.forms %}
     <div class="form">
@@ -134,5 +133,13 @@
 </div>
 <input type="submit" value="Submit" id="submit-button"/>
 </form>
+<div class="bad-deliveries">
+  <div id="bad-deliveries-title">Bad Deliveries</div>
+  {% for delivery in bad_deliveries %}
+  <ul>
+    <li>upc: {{delivery.release.upc}} &nbsp; action: {{delivery.action}}</li>
+  </ul>
+  {% endfor %}
+</div>
 </div>
 </body>

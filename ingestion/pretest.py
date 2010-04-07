@@ -56,11 +56,11 @@ for delivery in batch.good_deliveries():
     except Album.DoesNotExist:
         try:
             Artist.objects.get(artistvendor__external_artist_id=delivery.artist.pk).delete()
-        except Artist.DoesNotExist:
+        except (Artist.DoesNotExist, AttributeError):
             pass
         try:
             Label.objects.get(labelvendor__external_label_id=delivery.label.pk).delete()
-        except Label.DoesNotExist:
+        except (Label.DoesNotExist, AttributeError):
             pass
 
 
