@@ -1,0 +1,53 @@
+#global {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.formset {
+    margin: 20px 0 0 0;
+}
+
+.form {
+    border: solid thin;
+    margin: 0 0 10px 0;
+}
+
+.section-title {
+    font-size: 20px;
+    color: #0000FF;
+}
+
+#main-title {
+    font-size: 25px;
+    margin: 0 0 0 0;
+}
+
+.menu li {
+    display: inline;
+    margin-left: 10px;
+}
+
+.menu-error li {
+    color: #FF0000;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+/*********Report Styles********* */
+.report-failure {
+    font-size: 15px;
+    color: #FF0000;
+}
+
+.report-success {
+    font-size: 13px;
+    color: #00CC33;
+}
+/******End report styles*******/
+
+#submit-button {
+    margin: 20px 0 0 0;
+}

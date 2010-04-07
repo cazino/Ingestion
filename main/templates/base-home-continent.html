@@ -1,0 +1,46 @@
+{% extends "base-home.html" %}
+
+{% block top-middle %}
+<div id="box-slideshow">
+    <div id="bg-slideshow">
+        <div id="highlight"></div>      
+        <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="538" height="277" id="highlight" align="middle">
+            <param name="allowScriptAccess" value="sameDomain" />
+            <param name="movie" value="highlight.swf?{{LOCATION_STRING}}={{LOCATION_CODE}}&INP_LNG={{LANGUAGE_CODE}}&SECTION=1" />
+            <param name="quality" value="high" />
+            <param name="bgcolor" value="#ffffff" />
+            <embed src="media/swf/highlight.swf?{{LOCATION_STRING}}={{LOCATION_CODE}}&INP_LNG={{LANGUAGE_CODE}}&SECTION=1" wmode="transparent" quality="high" bgcolor="#ffffff" width="538" height="277" id="highlight" name="highlight" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+        </object>    
+    </div id="bg-slideshow"> 
+</div id="box-slideshow">
+{% endblock %}
+
+    
+{% block down-middle %}
+<div id="box-alaune">
+    <h3>{{highlight}}</h3>
+    <ul>
+        {% for vignette in ActualitesDisque %}
+            {% include 'vignette.html' %}
+        {% endfor %}
+    </ul>
+</div id="box-alaune">
+ <div id="box-coupdecoeur">
+    <h3>{{ourpicks}}</h3>
+    <ul id="jobi">
+        {% for vignette in CoupsDeCoeur %}
+            {% include 'vignette.html' %}
+        {% endfor %}
+    </ul>
+</div id="box-coupdecoeur">
+{% endblock %}
+    
+  
+ 
+
+
+
+
+
+
+

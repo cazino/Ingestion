@@ -1,0 +1,597 @@
+/* 
+** Inscription
+*
+ ------------------------------
+
+*/
+
+  #box_main{
+  float:left;
+  width:800px;
+  margin:40px 0 0 10px;
+  /*border:2px solid rgb(153,153,51);*/
+  }
+
+
+  #intro{ }
+  
+  #intro h3{
+  padding:0;margin:0;
+  font:22px Arial;color:#000;
+  border-bottom:1px dotted #000;
+  }
+  
+  
+  #bedcrumb{
+  margin:15px 0 0 0;
+  }
+  
+/******** bo.no-logged ***********/
+  #box-not-logged{
+  /*border:1px dotted #000;*/
+  margin:25px 0 0 0;
+  font:14px Arial;color:#000;
+  }
+  
+  #box-not-logged img {
+  vertical-align:middle;
+  margin:0 5px 0 0;
+  }  
+
+  #box-not-logged a:link, #box-not-logged a:visited, #box-not-logged a:hover{
+  font-weight:bold;color:#000;text-decoration:underline;
+  }
+  
+  #box-not-logged h4{
+  font:16px Arial;color:#000;
+  }
+
+
+    #box-not-logged #col-left{
+    float:left;
+    width:375px;
+    /*border:1px solid red;*/
+    }
+    
+    #box-not-logged #col-right{
+    float:left;
+    width:405px;
+    /*border:1px solid green;*/
+    border-left:1px dotted #000;
+    }
+
+
+
+  /* Form */
+  .identification-com{
+  margin:17px 0 0 0; padding:5px 0 0 45px;
+  font:16px Arial;color:#000;
+  
+  }
+  
+    .identification-com label.radio{
+    margin:0px 0 0 0px;
+    font-weight:bold;
+    }
+      .identification-com label.radio span{
+       font:normal 12px Arial;
+      }
+  
+    #rad-olcus, #rad-nucus{
+    margin:0px 0 0 -22px;
+    }
+    
+  #pro_email_log-com, #pro_email_reg-com{
+  margin:0px 0 0 10px;
+  width:265px;
+  border:1px solid #000;
+  }
+    #pro_email_reg-com{
+    width:245px;
+    }
+  
+  
+  #pro_password_log-com{
+  margin:10px 0 0 10px;
+  width:235px;
+   border:1px solid #000;
+  }  
+  
+  #bt_identification_valid-com, #bt_reg_valid-com{
+  background:#fff;  
+  font:bold 14px Arial;color:#000;text-transform:uppercase;
+  margin:10px 0 0 278px; 
+   border:1px solid #000;
+  }  
+  
+   #bt_reg_valid-com{
+   margin:10px 0 0 258px;
+   }
+  
+
+    .identification-com a:link, .identification-com a:visited, .identification-com a:hover {
+    background:transparent url(../img/fleche_nav.gif) no-repeat 0 2px;
+    font:bold 14px Arial; color:#000; text-decoration:underline;
+    margin:15px 0 0 0; padding:0 0 0 19px;
+    }
+
+
+/******** eo.no-logged ***********/
+
+  
+  .bt-add-comment{
+  background:url(../img/fleche_nav.gif) no-repeat 0px 3px;
+  font:bold 11px Arial;color:#000; text-align:left;
+  margin:5px 0 0 0;
+  padding:0 0 0 13px; 
+  width:200px;
+  cursor:pointer;
+  /**/border:none;
+  }
+  
+    .box-input-comm input{
+    /*float:left;*/
+    width:190px;
+    font:12px Arial;color:#000;
+    margin:0;padding:0;
+    border:1px solid #000;
+    background:#fff;
+    } 
+    
+    textarea.com-texte{
+    width:190px;
+    font:12px Arial;color:#000;
+    margin:5px 0 0 0;padding:0;
+    border:1px solid #000;
+    }
+
+
+/**** FORM ****/
+
+
+#box-checkout-panier{
+width:800px;
+}
+
+  /* total cart 
+  $$ 140708-213631
+  $$ surclasse les styles déterminés dans 'mondomixmusic.css'
+  */
+  #cont-sum{
+  float:none;
+  }
+
+  #box-steps{
+  
+  margin:20px 0 30px 0;
+   /*border:1px solid #000;*/
+  }
+  
+  #steps-list{
+  /*list-style:decimal inside; _/!\_ n'est pas appliqué si 'display:inline;' */
+   padding:0;
+  /*border:1px solid red;*/  
+  }
+    #steps-list li{
+    display:inline;
+    padding:5px 30px 5px 5px;
+    margin: 0 0px 0 0;
+    font:bold 15px Arial;
+    /**/border:1px solid #cdd203;
+    }
+
+  .step-selected{
+  background:#cdd203;
+  }
+  
+  #steps-list .step-neutre{
+  background:#fff;
+  padding-right:0;padding-left:0;
+  color:#cdd203;
+  border:none;
+  /*border:1px solid #cdd203;*/
+  }  
+
+
+/* reglage mondomixmusic.css
+ table#panier{width:326px;margin:2px auto 0 auto; background:#e0deda;}
+  #panier td{border-bottom:1px dotted #000;border-right:none;text-align:left;padding:0 0 0 2px;}
+  #panier .c-title{width:202px;}
+  #panier .c-type{width:48px;text-align:center;font:bold 12px Arial;color:#505050;}
+  #panier .c-price{width:48px;}
+  #panier .c-suppr{width:20px;}
+  
+*/
+  form#checkout1{
+  width:800px;
+  }
+  
+  table#panier{
+  margin:0;
+  width:800px;
+  background:#fff;
+  font:13px Arial;color:#000;
+  }
+  
+  #panier td{/*border-left:1px solid #000;*/} 
+  #panier .c-title{width:594px;}
+  #panier .c-type{width:48px;text-align:center;}
+  #panier .c-price{width:48px;}
+  #panier .c-suppr{width:110px;}
+
+  
+  #cko-separation td{
+   font:16px Arial;border:none;
+  }
+    #cko-sum td{/* --depre*/
+    background:#dbdace;
+    font-weight:bold;
+    text-align:left;
+    height:26px;
+    border:none;
+    font:bold 15px Arial;color:#000;
+    }
+    
+    #cko-sum .c-prix{    /* --depre*/
+      text-align:right;
+      padding: 0 2px 0 0;
+      font:bold 17px Arial;color:#d30062;
+	 }
+	 
+	/* resumé commande + bt commande */
+	#box-cko-sum{
+	margin:30px 0 0 0;
+	height:33px;
+	width:100%;
+	/*border:1px solid red;*/
+  }
+  
+    #box-cko-sum .c-prix{   
+    font:bold 19px Arial;color:#d30062;
+    }
+  
+  #box-cko-sum .c-summ{
+  background:#dbdace;
+  margin:0; padding:3px 20px 0 35px;
+  height:30px; width:440px;
+  font:bold 17px Arial;color:#000;
+  float:left;
+  }
+  
+  .f-left{
+  float:left;
+  }
+
+
+
+  /* bt submit step 1 */
+  #box-bt-submit-step{
+  margin:0px 0 0 0px;
+  }
+
+  .bt-submit-step{
+  background:url(../img/bt_action_pay-dl_bg.png) repeat-x 0px 0px;
+  font:bold 15px Arial; color:#fff; vertical-align:middle;
+  margin:0px 0 0 0px; padding:0 0 8px 0px;
+  height:33px;
+  line-height:33px;
+  cursor:pointer;
+  border:none;  
+  float:left;
+  }
+  
+  .bg-left{
+  width:11px; height:33px;
+  margin:0px 0 0 0px;
+  background:#dbdace url(../img/bt_action_pay-dl_left.png) no-repeat 0px 0px;
+  /*border:1px solid red;*/
+    float:left;
+  }
+  
+    .bg-transp{
+    background:url(../img/bt_action_pay-dl_left.png) no-repeat 0px 0px;
+    }
+
+
+  .bg-right{
+  background:url(../img/bt_action_pay-dl_right.png) repeat-x 0px 0px;
+  width:18px; height:33px;
+  margin:0px 0 0 0px;
+  float:left;
+  }
+
+
+  /**
+  ** Offres crédits - Pub
+  **/
+  #box-offres-pack-credits-explications{
+  margin:50px 0 0 0; padding:20px;
+  width:740px;
+  border:1px dotted #000;
+  /*border:1px solid red;*/
+  }
+  
+    #box-offres-pack-credits{
+    float:left;
+    cursor:pointer;
+    /*border:1px solid green;*/
+    }
+    
+    #box-offres-pack-credits p.titre{
+    font:bold 22px Verdana; color:#000;font-style: italic;
+    text-align:right; margin:0; padding:0 4px 0 0;
+    /*border:1px solid pink;*/
+    }
+      #box-offres-pack-credits  p.titre span{
+      font:bold 18px Verdana; color:#000;font-style: italic;
+      }
+
+       
+    #box-offres{
+    background:url(../img/bg_packages_credits.png) repeat-x 0px 0px;
+    margin:10px auto 0 auto;
+    width:224px; height:100px;
+    /*border:1px solid blue;*/
+    }
+      #box-offres .offres-line1{
+      font:bold 18px Verdana; color:#fff; font-style: italic;
+      text-align:left; margin:0;padding:0 0 0 15px;
+      }
+      #box-offres .offres-line1 span{
+      font:bold 20px Verdana; color:#fff;
+      }
+      
+      #box-offres .offres-line2{
+      font:bold 18px Verdana; color:#fff; font-style: italic;text-align:right; 
+      margin:-5px 0 0 0; padding:0 15px 0 0 ;
+      }
+      #box-offres .offres-line2 span{
+      font:bold 20px Verdana; color:#fff;
+      }
+    
+    
+    
+    #box-opc-explications{
+    float:left;
+    width:370px; margin:30px 0 0 20px; 
+    /*border:1px solid #CC00FF;*/
+    }
+      #box-opc-explications h4{
+      font:bold 22px Arial; color:#000; 
+      }
+    
+      #box-opc-explications p{
+      font:16px Arial; color:#000; 
+      }
+
+
+
+  /** Step 2
+   */
+  form#checkout_2{
+  
+  }
+    form#checkout_2 h4{
+    margin:15px 0 0 0;
+    padding:0;
+    font:18px Arial; color:#000; 
+    }
+    
+  table#panier-cko-step2{
+  margin:20px 0 0 0;
+  width:800px;
+  background:#fff;
+  font:16px Arial;color:#000;
+  }
+  
+  #panier-cko-step2 td{/*border-left:1px solid #000;*/} 
+  #panier-cko-step2 .c-type{width:30px; vertical-align:top;}
+  #panier-cko-step2 .c-title, #panier-cko-descriptif-credit .c-title{font-weight:bold;}
+    
+    #panier-cko-descriptif-credit td{
+     vertical-align:top;font-weight:normal;
+    }
+
+  #pay_wallet_row td, #pay_wallet_row2 td{
+  border:none;
+  }
+  
+  /* si pas assez de credit */
+  #pay_wallet_row2 td{
+  color:#d30062;
+  padding:0 0 0 25px;
+  }
+  
+  /* choix credit mondomix */
+  #nucredit_tr td{ }
+  
+  #panier-cko-listes-pack{
+  width:80%;
+  }
+   #panier-cko-listes-pack td{
+     padding:0 0 0 25px;
+   }
+  
+  #liste-credit-forfait{
+  font:bold 13px Arial;color:#D30062;text-decoration:underline;
+  }
+  
+
+
+
+  /***
+   **   step 3  **
+  ***/
+  h3#panier-cko-step3{
+  font:18px Arial;color:#D30062;
+  margin:60px 0 0 0;
+  }
+  
+  table#panier-cko-step3{
+  margin:10px 0 0 0;
+  width:588px;
+  background:#fff;
+  font:16px Arial;color:#000;
+  }
+  
+  #panier-cko-step3 td{} 
+  #panier .c-title{width:594px;}
+  #panier .c-type{width:48px;text-align:center;}
+
+
+  /* en cas de paiement d'un forfait en parallele a track/album */
+  #solde_plus_forfait{
+	margin:10px 0 0 0;
+	height:28px;
+	width:585px;
+  background:#dbdace;	
+  font:bold 17px Arial;
+  padding:5px 0px 0 0px;
+  text-align:center;
+	/*border:1px solid red;*/
+  }
+  
+  .total-credits{
+  font:bold 16px Arial;color:#d30062;
+  padding:0px 0 0 35px; 
+  }
+
+
+
+
+  /* presentation du moyen de paiment */
+  #paiement-details{
+  margin:50px 0 0 100px;
+  width:500px;
+  /*border:1px solid red; */
+  
+  }
+    #paiement-details h4{
+    font:bold 16px Arial;color:#d30062;
+    }
+    
+    #paiement-details p{
+    margin:0;
+    font:16px Arial;color:#000;
+    }
+    
+
+  #box-pp_certified-explic{
+  width:440px;
+  margin:0 auto;
+  }
+    
+  img#pp_certified{
+  float:left;
+  }
+
+  #pd-explic{
+  margin:0 0 0 20px;
+  width:300px;
+  float:left;
+  /*border:1px solid #d30062;*/
+  }
+    #pd-explic h4{
+    margin:0;
+    }
+    #pd-explic span{
+    font:12px Arial;color:#000;
+    }  
+  
+  
+  
+  /* Capture d'écran explicative */
+  #cko-findout-pp{
+  margin:10px 0 0 0px;
+  border:1px solid #000;
+  }
+  
+
+
+  #form_payement{
+  margin:10px auto;
+  
+  }
+
+
+  
+
+
+  /** Cart credit **/
+  h3#panier-credit{
+  font:18px Arial;color:#000;
+  margin:0;
+  }
+  
+  table#panier-credit{
+  margin:10px 0 0 0;
+  width:800px;
+  font:14px Arial;color:#000;
+  }
+
+  #panier-credit td{border-bottom:1px dotted #000;border-right:none;text-align:left;padding:0 0 0 2px;}
+  #panier-credit .c-title{width:202px; padding:0 0 0 5px;}
+  #panier-credit .c-type{width:48px;text-align:center;color:#b7bb09;}
+  #panier-credit .c-price{width:48px;text-align:center;}
+  #panier-credit .c-suppr{width:20px;}
+
+  
+  /* position du bt en dessous du screenshot */
+  #box-cko-sum .step3_pp_pos{
+  margin:0 0 0 300px;
+  }
+
+  
+  
+ /**
+  * Return 
+  **/
+  #box-checkout-return{
+    /*border:1px solid red;*/
+  }
+  
+  /* cliquer pour télécharger */
+  #cko-go2dl{
+  margin:20px 0;
+  border-bottom:1px dotted #000;
+  }
+  
+    #cko-go2dl h3{  
+    font:18px Arial;color:#D30062;
+    }
+    #cko-go2dl p{  
+    font:15px Arial;color:#000;
+    }    
+    #cko-go2dl p span{  
+    font:15px Arial;color:#D30062;
+    }
+
+  /* positionne le bouton générique (surclasse de l'ID) */
+  .cko-return-pos{
+  margin:0 0 0 40px !important;
+  }
+
+    
+  #cko-techInfos{
+  margin:20px 0 0 0;
+  }
+    #cko-techInfos p{
+    font:15px Arial;color:#000;
+    }
+    #cko-techInfos ul{
+    font:12px Arial;color:#000;
+    }
+    
+      
+	 #cko-techInfos a:link, #cko-techInfos a:visited, #cko-techInfos a:hover{
+	 font:15px Arial;color:#000;text-decoration:underline;
+	 }
+	
+  #cko-go2dl span{
+  margin:10px 0;
+  font:12px Arial;
+  }
+  
+  
+  
+  

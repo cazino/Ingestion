@@ -1,0 +1,19 @@
+<li id="{{vignette.type}}_alb-{{vignette.album_id}}"> 
+    <div class="box-tof">
+        <a href="{{vignette.artist_url}}" title="{{vignette.artist_name}} - {{vignette.album_title}}">
+            <img src="{{vignette.img_url}}" width="70" heigth="70" border="0" alt="pochette {{vignette.artist_name}} - {{vignette.album_title}}">
+         </a>
+    </div> 
+    <div class="box-texte">
+        <p>
+            <a href="{{vignette.artist_url}}" title="{{vignette.artist_name}}">{{vignette.artist_name|truncatewords:2}}</a>
+        </p>
+        <span title="{{vignette.album_title}}">{{vignette.album_title|truncatewords:2}}</span>
+        <br>
+        <span title="{{vignette.pays}}">({{vignette.pays|capfirst}})</span>
+        <a href="#" class="dl" onClick="context_menu('{{vignette.album_id}}','2','{{vignette.type}}_alb');"> {{download|capfirst}}</a>
+    </div> 
+    <br class="clear" /> 
+</li> 
+
+

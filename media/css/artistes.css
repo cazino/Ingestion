@@ -1,0 +1,820 @@
+/* 
+** Artiste
+*
+ ------------------------------
+
+*/
+
+#box_main{
+float:left;
+/*border:1px solid rgb(153,153,51);*/
+}
+
+  /**
+   * Fil Ariane
+  */
+  #fil-ariane{
+  text-align:right;
+  font:10px Verdana;color:#000;
+  }
+ 
+  #fil-ariane a:link,
+  #fil-ariane a:visited,
+  #fil-ariane a:hover{
+  padding:0;  margin:0px;
+  font:bold 10px Verdana;color:#000;
+  text-decoration:none;
+  }
+    #fil-ariane a:hover{
+    text-decoration:underline;
+    } 
+ 
+  /***
+  *
+  * ARTISTES BIO
+  */
+   
+  #artiste-ds-top{
+  margin:5px 0 0 0;
+  background:url(../img/ds_bottom_artiste.png) no-repeat 0px -1px;
+  height:1px;
+  /*border:1px solid #000;*/
+  }
+  
+  #bg-artiste{
+  width:820px;
+  background:url(../img/ds_glob_artiste.png) repeat-y 0;
+  padding:10px 0 0 15px;/* ds : 5px + retrait : 10px  == 15px de paddding left */
+  /*border-top:1px solid #DADADA;*/
+  }
+  
+  #box-artiste{
+  width:800px;
+   padding:0 0 10px 0;
+  /*border:1px solid #3366FF;*/
+  }
+
+  
+  #artiste-ds-bottom{
+  margin:0;
+  background:url(../img/ds_bottom_artiste.png);
+  height:4px;
+  /*border:1px solid #000;*/
+  }
+
+  /**
+  ** Artiste - Img
+  */ 
+  #img-artiste{
+  float:left;
+  padding:12px;
+  background:url(../img/bg_photo_alaune.png);
+  /*border:1px solid #000;*/
+  }
+  
+    #img-artiste img{
+    padding:8px;
+    /*background:url(../img/contour_cover.png) no-repeat right top;*/
+    background:#fff;
+    }
+    
+    /** --depre.100908-175143
+    #artiste-lien-dotcom{
+    position:absolute;
+    background:#fff; opacity:0.8;
+    text-align:center;
+    width:198px;
+    margin:182px 0 0 9px;
+    border-top:1px dotted #fff;
+    }
+      #artiste-lien-dotcom a:link,
+      #artiste-lien-dotcom a:visited,
+      #artiste-lien-dotcom a:hover{
+      padding:0px 0 0px 0px;
+      margin:0px 0 0 0px;
+      font:bold 10px Verdana;color:#000;text-decoration:none;
+      }
+    **/
+
+
+    /** 
+     * Appel ajax info. compl. via dotCom      
+     * add.090908-200732
+    */             
+    .txt-dotcom{
+    display:none;
+    }
+      a.lien-dotcom:link,
+      a.lien-dotcom:visited,
+      a.lien-dotcom:hover{
+      padding:0px 0 0px 0px;
+      margin:0px 0 0 0px;
+      font:bold 10px Verdana;color:#000;text-decoration:none;
+      }
+    #portrait-dotcom{
+    
+    }
+ 
+  /**
+   * Artiste - texte
+   */     
+  #texte-artiste{
+  float:left;
+  padding:0;margin:30px 0 0 20px;
+  width:520px;
+  /*border:1px dotted red;*/
+  }
+    #texte-artiste h3{
+    margin:0px 0 0 0;
+    padding:0;
+    font-size:18px;
+    }  
+  
+    #texte-artiste p{
+    margin:25px 0 0 0;
+    text-align:justify;
+    }
+  
+      #texte-artiste span{
+      font-weight:normal;
+      }
+  
+
+  
+ 
+  #artistes-asso{}
+ 
+    #artistes-asso a:link,
+    #artistes-asso a:visited,
+    #artistes-asso a:hover{
+    padding:0px 0 0px 0px;
+    margin:0px 0 0 0px;
+    font:bold 10px Verdana;color:#000;text-decoration:none;
+    /*display:block;*/
+    }
+    
+    
+   
+  a.bt-lien-fleche:link,
+  a.bt-lien-fleche:visited,
+  a.bt-lien-fleche:hover{
+  padding:0px 0 5px 16px;
+  margin:2px 0 0 0px;
+  font:bold 11px Arial;color:#000;text-decoration:none;
+  background:url(../img/fleche_nav.gif) no-repeat 0px 2px;
+  /*display:block;*/
+  }
+  
+  /* reco */
+  #box-recommendation{
+  margin:10px 0 0 0px;
+  }
+
+
+  #list-rating{
+  list-style:none;
+  padding:0px 0 0px 0px;  
+  }
+
+  #list-rating a:link,
+  #list-rating a:visited,
+  #list-rating a:hover{
+  font:bold 10px Verdana;color:#000;text-decoration:underline;
+  height:25px;
+  }
+  
+  #list-rating a.ecoute:link,
+  #list-rating a.ecoute:visited,
+  #list-rating a.ecoute:hover{
+  background:url(../img/ico_hautparleur.png) no-repeat 0px 0px;
+  padding:0px 0 0px 20px;
+  margin:0px 0 0 0px;
+  font:bold 10px Verdana;color:#000;text-decoration:none;
+  height:25px;
+  }
+  
+  
+  
+  #list-bestsold-track{
+  list-style:none;
+  padding:0px 0 0px 0px;  
+  }
+
+  #list-bestsold-track a:link,
+  #list-bestsold-track a:visited,
+  #list-bestsold-track a:hover{
+  font:bold 10px Verdana;color:#000;text-decoration:underline;
+  height:25px;
+  }
+  
+  #list-bestsold-track a.ecoute:link,
+  #list-bestsold-track a.ecoute:visited,
+  #list-bestsold-track a.ecoute:hover{
+  background:url(../img/ico_hautparleur.png) no-repeat 0px 0px;
+  padding:0px 0 0px 20px;
+  margin:0px 0 0 0px;
+  font:bold 10px Verdana;color:#000;text-decoration:none;
+  height:25px;
+  }
+ 
+  /*****
+  * ALBUMS
+  *
+  */  
+  #box-albums{
+  margin:0 0 0 0;
+  width:822px;
+  /*border:1px solid rgb(255,102,204);*/
+  }
+  
+  .box-album{
+  font:11px Arial;
+  width:822px;
+  margin:34px 0 0 4px; padding:0 0 34px 0;
+  border-bottom:1px dotted #7F7E67;
+  /*border:1px dashed rgb(255,102,204);*/
+  }  
+  
+  
+  /**
+   * Raccourcis d'achats
+   */
+  .wrap-box-album-shortcuts{
+  z-index:5;
+  position:absolute;
+  margin:0 0 0 513px;
+  width:300px;
+  font:bold 11px Arial;color:#000;
+  }  
+  .box-album-shortcuts{
+  border:1px solid #2d2d2d;
+  }
+    .box-album-shortcuts .col-left,
+    .box-album-shortcuts .col-right{
+    float:left;
+    padding:3px 0 3px 10px;
+    }
+      .box-album-shortcuts .col-left{
+      background:url(../img/bg_photo_alaune.png);
+      width:147px;
+      padding:3px 0 3px 0px;
+      text-align:center;
+      }
+      
+        .box-album-shortcuts .col-left h5{
+        padding:0 0 12px 0; margin:0;
+        font:inherit;/* héritage 'font' de .box-album-shortcuts*/
+        cursor:pointer;
+        }
+    
+    a.bt-alb-buy:link,a.bt-alb-buy:visited, a.bt-alb-buy:hover,
+    a.alb-isbought:link,a.alb-isbought:visited, a.alb-isbought:hover{
+    background:/**/url(../img/ico_cart.png) no-repeat 0px 2px;
+    font:bold 14px Arial;color:#000;
+    margin:2px 0 0 5px;padding:4px 0 5px 18px;
+    text-decoration:none;
+    display:block;
+    width:121px;
+    /*border:1px solid #2d2d2d;*/
+    }
+      a.bt-alb-buy:hover{background:#fff url(../img/ico_cart.png) no-repeat 0px 2px;}
+      
+    a.alb-isbought:link,a.alb-isbought:visited, a.alb-isbought:hover{/* deja dans cart*/
+    background:url(../img/ico_famfam/tick.png) no-repeat 4px 2px;
+    cursor: default;
+    }
+    
+      
+      .box-album-shortcuts .col-right{
+      background:#fff;
+      width:130px;
+      text-align:center;
+      }
+      
+      .extraits{
+      font:10px Arial; color:#000;
+      }
+    .col-right a.bt-lien-fleche{
+    font:bold 14px Arial;color:#d30062;
+    }
+    
+    .col-right a.bt-alb-listen{
+    background:url(../img/ico_hautparleur.png) no-repeat 0px 6px;
+    font:bold 14px Arial;color:#d30062;
+    margin:2px 0 0 0;padding:4px 0 5px 18px;
+    text-decoration:none; display:block;
+    }
+
+  .prix-album{
+  font:bold 14px Arial;color:#d30062;
+  }
+  
+  .bt-cart-add{
+  background:url(../img/ico_cart_mini.png) no-repeat 4px -2px;
+  font:9px Arial;color:#000;
+  margin:0px 0 0 0;
+  padding:0 0 0 28px; 
+  width:95px;
+  cursor:pointer;
+  /**/border:none;
+  }
+  
+
+  /* vente-bundle-only */
+  .vente-bundle-only{
+  margin:2px 0 0 0;
+  font:bold 11px Arial;color:#E25999;
+  }
+
+  
+  .texte-album .annee-label-duree{
+  margin:10px 0 0 0;
+  width:368px;
+  /*border:1px dotted red;*/
+  }
+  
+  .genres, .instruments{
+  width:368px;
+  }
+
+  .genres a:link,
+  .genres a:visited,
+  .genres a:hover{
+  padding:0;  margin:0px;
+  font:unherit; color:#000;
+  text-decoration:underline;
+  }
+    
+    
+    
+  
+  /**
+  ** Album - Img
+  */ 
+  .img-album{
+  float:left;
+  padding:4px;
+  background:url(../img/bg_photo_alaune.png);
+  /*border:1px solid #000;*/
+  }
+  
+    .img-album img{
+    padding:2px;
+    background:#fff;
+    border:none;
+    }
+    
+    .ico-zoom{
+    background:#fff url(../img/ico_zoom.png) no-repeat;
+    width:17px;height:17px;
+    /*margin:1px 0 0 4  4px;*/
+    opacity:0.8;
+    position:absolute;
+
+    }
+ 
+  /**
+   * Artiste - texte
+   */     
+  .texte-album{
+  float:left;
+  padding:0;margin:0px 0 0 20px;
+  width:520px;
+  /*border:1px dotted red;*/
+  }
+    .texte-album h3{
+    background:url(../img/fleche_nav.gif) no-repeat 0 3px;
+    margin:0px 0 0 0;padding:0 0 0 16px;
+    font:bold 14px Arial;
+    width:360px;
+    }  
+  
+    .texte-album p{
+    margin:0 0 0 0;
+    }
+    
+    .texte-album .genres, .texte-album .descriptif{
+    margin:15px 0 0 0;
+    text-align:justify;
+    } 
+
+    
+    .texte-album span{
+    font-weight:bold;
+    }
+  
+  .bt-display-tracklisting{
+  background:url(../img/fleche_bas_noborder.png) no-repeat 98% 3px;
+  font:bold 12px Arial;color:#d30062;
+  margin:15px 0 0 0;
+  padding:0 15px 0 8px; 
+  cursor:pointer;
+  border-top:1px solid #000;border-right:1px solid #000;
+  }
+ 
+  /**/
+  #box-tabs{}
+  #box-tabs ul{
+  list-style:none;
+  margin:0;padding:0;
+  }
+  #box-tabs ul li{float:left;}
+
+  .tab-first{
+  border-left:1px solid #000;
+  }
+  
+  
+/* test id tab*/
+/* Style for Usual tabs */
+.usual {
+ /* background:#181818;
+  color:#111;
+  padding:15px 20px;
+  width:680px;
+  border:1px solid #222;
+  */
+  margin:8px 0 0 0;
+}
+.usual li { list-style:none; float:left; }
+.usual ul a {
+  display:block;
+  padding:6px 10px;
+  text-decoration:none!important;
+  margin:1px;
+  margin-left:0;
+  font:10px Verdana;
+  color:#FFF;
+  background:#444;
+}
+.usual ul a:hover {
+  color:#FFF;
+  background:#111;
+  }
+.usual ul a.selected {
+  margin-bottom:0;
+  color:#000;
+  background:snow;
+  border-bottom:1px solid snow;
+  cursor:default;
+  }
+/**/.usual div {
+  padding:10px 10px 8px 10px;
+  *padding-top:3px;
+  *margin-top:-15px;
+  clear:left;
+
+  font:10pt Georgia;
+}
+.usual div a { color:#000; font-weight:bold; }
+
+#usual2 { background:#0A0A0A; border:1px solid #1A1A1A; }
+#usual2 a { background:#222; }
+#usual2 a:hover { background:#000; }
+#usual2 a.selected { background:snow; }
+#tabs3 { background:#FF9; }
+
+/*********************/
+
+  /**
+   * Tracklisting - tl
+   */
+  .box-tracklisting{
+  display:none;
+  margin:0px 0 0 0;
+  /*border:1px solid #000;*/
+  }
+  
+  table.tracklisting{
+  /*float:left;*/
+  background:url(../img/bg_photo_alaune.png);
+  padding:25px;margin:0;
+  width:650px;
+  /*border:1px solid #000;*/
+  }
+  
+  table tbody{
+  font:normal 11px Arial;
+  }
+    td{
+    padding:0;
+    border-bottom:1px solid #fff;
+    }
+    
+    .track-free{
+    background:#CDD203;
+    font-weight:bold;
+    }
+    
+    .alb-nb-support{
+    font:bold 12px Arial;
+    }
+
+    
+    td.ecoute{
+    vertical-align:top;
+    padding:0 0 0 20px;
+    width:15px;
+    }
+    
+    .bt-ecoute{
+    background:url(../img/ico_hautparleur.png) no-repeat 3px 2px;
+    cursor:pointer;
+    border:none;/*1px solid #000*/
+    }
+    
+    td.number{
+    vertical-align:top;
+    text-align:center;
+    width:32px;
+    }
+    
+    td.titre{
+    font-weight:bold;
+    width:260px;
+    }
+    
+    td.duration{
+    vertical-align:top;
+    width:60px;
+    }
+    
+    td.prix{
+    vertical-align:top;
+    width:50px;
+    text-align:center;
+    }
+
+    td.cart-track{
+    vertical-align:top;
+    padding:0 20px 0 0;
+    width:70px;
+    }
+    
+    .bt-cart-track{
+    background:url(../img/ico_cart_mini.png) no-repeat 4px 0px;
+    cursor:pointer;
+    border:none;
+    }
+    
+    .bt-cart-track_isvalided, .track_isbought{/* deja dans cart*/
+    background:url(../img/ico_famfam/tick.png) no-repeat 4px 0px;
+    cursor:default;
+    border:none;width:20px
+    }
+      
+  table tfoot{
+  font:normal 8px Verdana;
+  } 
+  
+  
+  /*****/
+  
+  .trackL-col-right{
+  /*float:right; -------depre290908-215814*/
+  }
+  
+
+  /***
+    * Fiche tech
+  *****/
+  .usual .box-fiche-tech{
+  display:none;
+  margin:0;
+  width:650px;
+  height:140px;
+  /*border:1px solid #000;*/
+  }
+  
+  #bg-fiche-tech{
+  background:url(../img/bg_photo_alaune.png) repeat;
+  height:140px;
+  }
+  
+    .box-fiche-tech p{
+    background:#fff;
+    margin:0; padding:4px 0 4px 4px;
+    font:12px Arial;color:#000;
+    /*border-bottom:1px dotted #c4c39e;*/
+    }
+  
+  /* Export : inhib.010908-0000 */
+  .box-export{
+  margin:20px 0 0 0;
+  display:block;
+  }
+    
+    .box-export p{
+    margin:0;
+    padding:0 0 4px 0;
+    }
+    
+    .box-export input{
+    width:180px;
+    font:10px Arial;color:#000;
+    /*margin:0 0px 2px 5px;*/
+    background:#DDD;
+    border:1px solid #000;
+    }
+
+
+    /***
+     * Send To Friend
+    *****/
+    .usual .box-send2friend{
+    display:none;
+    margin:0;
+    width:650px;
+    }
+    
+    form.s2f-form fieldset{
+    background:url(../img/bg_photo_alaune.png) repeat;
+    }
+
+    .usual .box-input-send2friend{
+    padding:25px;
+    background:#fff;
+    }
+    
+    .box-send2friend label{
+    float:left;
+    width:156px;
+    padding:2px 0 2px 2px;
+    /*border:1px solid #000;*/
+    }
+    
+    .usual .box-send2friend input, .usual .box-send2friend textarea{
+    float:right;
+    width:220px;
+    font:12px Arial;color:#000;
+    margin:0 0px 2px 5px;
+    border:1px solid #000;
+    background:transparent;
+    } 
+    
+      
+  
+  /*****
+   * COMMENTAIRES
+   *
+   */  
+  .box-commentaires-bg{
+  display:none;
+  /*margin:20px 0 0 5px;*/
+  background:#fff;
+  width:650px;
+  /*border:1px dashed red;*/
+  }
+  .box-commentaires{
+  padding:25px;
+  background:url(../img/bg_photo_alaune.png) repeat;
+     
+  }
+  
+  .box-commentaires p.titre{
+  background:#fff;
+  margin:0px 0 0 24px;
+  }
+  
+  .comment-form fieldset{
+    background:#fff;
+    border:1px solid #000;
+  }
+
+  
+  .bt-add-comment{
+  background:url(../img/fleche_nav.gif) no-repeat 0px 3px;
+  font:bold 11px Arial;color:#000; text-align:left;
+  margin:5px 0 0 0;
+  padding:0 0 0 13px; 
+  width:200px;
+  cursor:pointer;
+  /**/border:none;
+  }
+
+    .box-input-comm label{
+    float:left;
+    width:156px;
+    padding:2px 0 2px 2px;
+    /*border:1px solid #000;*/
+    }
+    
+    .box-input-comm input, .box-input-comm textarea{
+    float:right;
+    width:380px;
+    font:12px Arial;color:#000;
+    margin:0 0px 2px 5px;
+    border:1px solid #000;
+    background:transparent;
+    }
+    
+    /*bt valider un commentaire*/
+    .box-input-comm .bt_commentaire_valid{
+    float:right;
+    width:120px;
+    font:12px Arial;color:#000;
+    margin:0 0px 2px 5px;
+    border:1px solid #000;
+    background:transparent;
+    }
+
+
+  h4.commentaires-liste{
+  background:#fff;
+  font:bold 14px Arial;color:#000;
+  width:603px;
+  /*border-bottom:1px dotted #000;*/
+  padding:2px 2px 15px 2px;
+  margin:15px auto 0 auto;
+  
+  }
+     h4.commentaires-liste span{
+     border-bottom:1px dotted #000;
+     }
+  
+  .commentaires-liste{
+  background:#fff;
+  margin:0px auto;padding:3px 0;
+  width:606px;
+  list-style:outside;
+  /*border:1px solid #000;*/
+  }
+  
+    .commentaires-liste li{
+    float:none;
+    width:600px;
+    margin:0 auto;
+    /**/padding:0;
+    font:12px Arial;color:#000;
+    }
+    
+      .commentaires-liste li h5{
+      font:bold 12px Arial;color:#000;
+      border-bottom:1px dotted #000;
+      padding:0;margin:0;
+      }
+      
+      .commentaires-liste li p{
+      padding:0;
+      }
+
+
+    .zebra-even{
+    background:#EBEADF;/*F8F8F8*/
+    }
+      
+    .zebra-odd{
+    background:#FFF;
+    }
+
+
+
+  /* --------------------- DEPRE
+  #box-commentaires h3 {
+  background:url(../img/ico_commentaire.gif) no-repeat 0px 2px;
+  color:#D30062;
+  margin:0; padding:0 0 0 25px;
+  border-bottom:1px dotted #c4c39e;
+  }
+  */
+
+
+
+/*
+  .box-input-comm{
+  padding:5px; 
+  border:1px dotted #000;
+  }
+*/
+  /* Must be logged */
+  .com-mustbelogged{
+  margin:15px 0 0 0;
+  }
+  
+  /* Form */
+  .identification-com{
+  margin:7px 0 0 0;
+  display:none;
+  }
+  
+    .identification-com input{
+    margin:0px 0 0 10px;
+    border:1px solid #000;
+    font:bold 11px Arial;color:#000;
+    }
+/*
+    .box-input-comm input{
+    width:190px;
+    font:12px Arial;color:#000;
+    margin:0;padding:0;
+    border:1px solid #000;
+    background:#fff;
+    } 
+    
+    textarea.com-texte{
+    width:190px;
+    font:12px Arial;color:#000;
+    margin:5px 0 0 0;padding:0;
+    border:1px solid #000;
+    }
+*/

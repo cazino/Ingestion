@@ -1,0 +1,66 @@
+/* 
+** CREDITS
+** 
+*/
+
+  h2{
+  margin:53px 0 0 0;
+  font:bold 30px Arial, Helvetica, sans-serif;color:#d30062;
+  }
+  
+  h3{
+  margin:45px 0 0 0;
+  font:bold 16px Arial, Helvetica, sans-serif;color:#000;
+  }
+
+  #box-listes-credits{
+  margin:25px 0 0 5px;
+  }
+  
+  #box-listes-credits ul{
+  border:1px dotted #000;
+  padding:10px 0 10px 20px;
+  width:435px;
+  } 
+
+  #box-listes-credits ul li{
+  list-style-type: none;
+  margin: 0px;padding:0;
+  }
+
+  .offersnbtitle{
+  	font:bold 30px Arial, Helvetica, sans-serif; color:#DB007F;
+  	text-decoration: none;
+  }
+
+.offerinfos{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 19px;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+}
+
+  .pinklinkcredits{
+  font:20px Arial, Helvetica, sans-serif;color:#DB007F;
+	text-decoration: none;
+	margin-left: 10px;
+  }
+  
+  #box-listes-credits p{
+  margin:10px 0 0 0;
+  font:16px Arial, Helvetica, sans-serif;color:#000;
+  }
+
+
+
+  #box-info-complementaire{
+      margin:53px 0 0 0;
+  }
+    #box-info-complementaire h2{
+    font:30px Arial, Helvetica, sans-serif;color:#000;
+    }
+    #box-info-complementaire p{
+    margin:5px 0 0 0;
+    font:16px Arial, Helvetica, sans-serif;color:#000;
+    }

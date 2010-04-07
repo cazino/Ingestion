@@ -1,0 +1,53 @@
+/***
+ *
+ * IE
+ * 160908-174450
+**/
+
+#box_global{
+margin:0 auto;
+width: 1000px; /* dropshadow included*/
+padding:0 0 0 0px;
+/*border:1px dashed #000;*/
+}
+  /** Liste alfa (genre et continent) **/
+  #alfabeta{
+  width:520px;
+  }
+  
+  
+  #ctx-menu{
+    margin:-5px 0 0 100px; padding:4px 0;
+  }
+  
+    #ctx-menu .info{
+    height:18px;
+    }
+
+  /* Cart - Panier - caddie */
+  #cont-panier p{background:url(../img/ico_cart.png) no-repeat 90px 0px;}/*LEFT - TOP*/
+  
+  .cart-ico-suppr{
+  background:url(../img/ico_trash_noir.png) no-repeat 0px 2px;
+  width:20px;
+  /*border:1px solid red;*/
+  }
+  
+  /* Artiste -  Tracklisting */
+  .bt-ecoute, .bt-cart-track, .bt-cart-track_isvalided{
+  width:20px;
+  }
+  
+  .box-album-shortcuts{
+  margin:0 0 0 -150px;
+  
+  }
+  
+  .box-album-shortcuts .col-left h5{
+  font:bold 11px Arial;
+  }
+  
+  #box-miniplayer{ /* necessaire pour IE v.x ---depre */
+
+  }
+  

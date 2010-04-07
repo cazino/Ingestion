@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>{% autoescape off %}
+<hlight> 
+{% for highlight in highlights %}<item> 
+<id><![CDATA[{{highlight.id}}]]></id> 
+<title><![CDATA[{{highlight.title}}]]></title> 
+<subtitle><![CDATA[{{highlight.subtitle}}]]></subtitle> 
+<texte><![CDATA[{{highlight.text}}]]></texte> 
+<image><![CDATA[{{highlight.img}}]]></image> 
+<link><![CDATA[{{highlight.link}}]]></link> 
+<targetlink><![CDATA[_self]]></targetlink> 
+<title_color><![CDATA[efeaff]]></title_color> 
+<subtitle_color><![CDATA[efeaff]]></subtitle_color> 
+</item>{% endfor %}
+</hlight>{% endautoescape %}

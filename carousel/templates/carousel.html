@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+{% autoescape off %}
+<carusel>
+{% for vignette in carousel %}<item> 
+<album_image><![CDATA[{{vignette.img_url}}]]></album_image> 
+<artiste_name><![CDATA[{{vignette.artist_name}}]]></artiste_name> 
+<url><![CDATA[{{vignette.artist_url}}]]></url> 
+<artiste_pays><![CDATA[{{vignette.album_title}}]]></artiste_pays> 
+<album_type><![CDATA[{{vignette.pays|capfirst}}]]></album_type> 
+<artist_id><![CDATA[{{vignette.artist_id}}]]></artist_id> 
+</item> {% endfor %}
+</carusel>
+{% endautoescape %}

@@ -1,0 +1,165 @@
+
+
+  /** MENU
+   *
+   **/
+  
+  #box-bg-menu{
+  background: url(../img/bg_dropshadow_vertical.png) repeat-y top right;
+
+  }
+  
+  #box-menu{
+  padding:7px 0 7px 0px;
+  /*border:1px solid green;*/
+  }
+  
+  #ds-top{
+  background: url(../img/bg_dropshadow_top.png) repeat-x top;
+  height:4px;width:145px;
+  padding:0;margin:0;
+  /*border:1px solid green;*/
+  }
+  
+  #ds-bottom{
+  background: url(../img/bg_dropshadow_bottom.png) repeat-x;
+  height:7px;width:139px;
+  padding:0;margin:0;
+  /*border:1px solid green;*/
+  }
+
+
+
+  /** Treeview
+  **/
+.treeview ul {}
+
+.treeview, .treeview ul {
+	padding: 0; margin: 0;
+	list-style: none ;
+}
+
+
+
+.treeview li {margin: 0;}
+.treeview a.selected {background: #000;}
+.treeview .hover { color:#fff;cursor: pointer; }
+
+/** pour Général */
+
+
+#collapsable-ul{
+list-style:none;
+width:130px;
+margin:0px 6px 0px 4px; padding:0;
+/*border:1px solid blue;*/
+}
+
+  #collapsable-ul.treeview li{
+  padding:6px 0 0px 8px;
+  background:#d30062 !important;
+  font:18px Arial;color:#fff;
+  }
+  
+  #collapsable-ul.treeview li.menu_on {
+  background:#6F0D3D !important; 
+  font:bold 12px Arial;color:#fff;
+  }
+  
+  #collapsable-ul.treeview ul.ssmenu{
+  margin:8px 0 0 -8px;
+  padding:0 0 0px 0;
+  background: #fff; /*border:1px dashed blue;*/
+  }
+  
+  #collapsable-ul.treeview ul.ssmenu li{
+  background: #fff !important;
+  font:bold 12px Arial;color:#d30062;
+  padding:2px 0;
+  
+  }
+  #collapsable-ul.treeview ul.ssmenu li:hover{
+  background:#6F0D3D !important; 
+  font:bold 12px Arial;color:#fff;
+  border:none;
+  }
+  
+  /* pipe avant et apres chaque item du menu */
+  .pipe{}
+  
+    .ssmenu a:link,.ssmenu a.explorer:link,
+    .ssmenu a:visited, .ssmenu a.explorer:visited,
+    .ssmenu a:hover, .ssmenu a.explorer:hover{
+    font:bold 12px Arial;color:#000;
+    text-decoration:none;
+    padding:0 6px;
+    margin: 0 0 0 2px;
+    /*border-left:1px solid #d30062; border-right:1px solid #d30062;*/
+    }
+    
+    .ssmenu a.explorer:link,
+    .ssmenu a.explorer:visited,
+    .ssmenu a.explorer:hover{
+    font:bold 11px Verdana;
+    }
+
+
+  /*
+  * menu on
+  */
+  #collapsable-ul.treeview ul.ssmenu li.menu_on {
+  background:#6F0D3D !important; 
+  font:bold 12px Arial;color:#fff;
+  border-top:1px solid #fff;
+  }
+  
+  
+    #collapsable-ul.treeview ul.ssmenu li.menu_on a:link,
+    #collapsable-ul.treeview ul.ssmenu li.menu_on a:visited,
+    #collapsable-ul.treeview ul.ssmenu li.menu_on a:hover{
+    font:bold 12px Arial;color:#fff;
+    text-decoration:none;
+    padding:0 6px;
+    margin: 0 0 0 2px;
+    border:none;
+    /*border-left:1px solid #d30062; border-right:1px solid #d30062;*/
+    }
+  
+  /*menu déroulable */
+  #collapsable-ul.treeview .expandable {
+  padding:4px 0 4px 8px;
+  font:bold 12px Arial;color:#fff;
+  background:#d30062 !important;/* url(../img/fleche_droite_menu2.png) 0 -2px no-repeat*/
+  border-bottom:1px dotted #fff;
+  }
+
+  /* une fois le menu déroulé */
+  #collapsable-ul.treeview .collapsable, #collapsable-ul.treeview .last {
+  padding:4px 0 4px 8px;
+  font:bold 12px Arial;color:#fff;
+  background:#d30062 !important;
+  }
+    #collapsable-ul.treeview .collapsable span{padding:0px 0 10px 0px;}
+
+  #collapsable-ul.treeview .menu-last a:link,
+  #collapsable-ul.treeview .menu-last a:visited,
+  #collapsable-ul.treeview .menu-last a:hover{
+  font:bold 12px Arial;color:#fff;
+  text-decoration:none;
+  }
+    
+/*
+ * derniers elements caché (fonctionalités non utilisées)
+#collapsable-ul.treeview .last {background:purple url(../img/fleche_down_menu.png) 0 center no-repeat; }
+#collapsable-ul.treeview .lastCollapsable {background:red url(../img/fleche_down_menu.png) 0 center no-repeat; }
+
+#collapsable-ul.treeview .lastExpandable { background:pink url(../img/fleche_down_menu.png) 0 center no-repeat; }
+*/
+
+  /** Pub */
+  #box-pubSky{
+  margin:15px 0 0 0;
+  text-align:center;
+  /*border : 1px dotted #000;*/
+  
+  }

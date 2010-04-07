@@ -1,0 +1,226 @@
+/* 
+** AIDE
+** 170908-161232
+*/
+
+  /***
+   * Pavé support
+   * 090209-114612
+  ***/
+
+  #box-warn-support{
+  background:#FFF6BF;
+  margin:15px 0 0 5px; padding:0 0 0 20px;
+  border-top:2px solid #FFD324;border-bottom:2px solid #FFD324;
+  font:13px Arial;color:#000;
+  }
+  
+
+    #box-warn-support a:link,
+    #box-warn-support a:visited,
+    #box-warn-support a:hover{
+    background:url(../img/fleche_nav.gif) no-repeat scroll 0 2px;
+    padding:0 0 0 20px;
+    font:bold 12px Arial;color:#000;text-decoration:underline;
+    }
+
+    #box-warn-support a:hover{
+    text-decoration:none;
+    }
+  
+  /*----- bo.bt dl ----  */
+  .box-bt-dl{
+  margin:10px 0 0 2px;
+  width:230px;
+  }
+  
+  .bt-dl{
+  background:url(../img/bt_action_pay-dl_bg.png) repeat-x 0px 0px;
+  font:15px Arial; color:#fff; vertical-align:middle;
+  margin:0px 0 0 0px; padding:0 0 10px 0px;
+  height:34px; width:auto;
+  cursor:pointer;
+  border:none;  
+  float:left;
+  }
+  
+  .bg-bt-dl-left{
+  width:11px; height:32px;
+  margin:0px 0 0 0px;
+  background: url(../img/bt_action_pay-dl_left.png) no-repeat 0px 0px;
+  /*border:1px solid red;*/
+    float:left;
+  }
+    .bg-transp{
+    background:url(../img/bt_action_pay-dl_left.png) no-repeat 0px 0px;
+    }
+
+
+  .bg-bt-dl-right{
+  background: url(../img/bt_action_pay-dl_right.png) no-repeat 0px 0px;/*#dbdace*/
+  width:20px; height:32px;
+  margin:0px 0 0 0px;
+  float:left;
+  }
+  /*----- eo. bt dl ----*/
+  
+
+  /*----- bo.no-logged -----*/
+  #box-not-logged{
+  margin:25px 0 0 0;padding:0 0 15px 0;
+  font:14px Arial;color:#000;
+  /**/display:none;
+  }
+  
+  #box-not-logged img {
+  vertical-align:middle;
+  margin:0 5px 0 0;
+  }  
+
+  #box-not-logged a:link, #box-not-logged a:visited, #box-not-logged a:hover{
+  font-weight:bold;color:#000;text-decoration:underline;
+  }
+  
+  #box-not-logged h4{
+  font:16px Arial;color:#000;
+  }
+
+
+    #box-not-logged #col-left{
+    float:left;
+    width:375px;
+    border-left:1px dotted #000;    
+    /*border:1px solid red;*/
+    }
+    
+    #box-not-logged #col-right{
+    float:left;
+    width:405px;
+    /*border:1px solid green;*/
+
+    }
+
+  
+  /* forms */
+  .identification-com{
+  margin:17px 0 0 0; padding:5px 0 0 5px;
+  font:16px Arial;color:#000;
+  }
+  
+  #cko-reg{
+  margin:17px 0 0 15px;
+  }
+  
+    #cko-reg p,#cko-login p{
+    margin:5px 0 ;
+    font:12px Arial;color:#000;
+    }
+
+    .identification-com label.radio{
+    margin:0px 0 0 0px;
+    font-weight:bold;
+    }
+      .identification-com label.radio span{
+       font:normal 12px Arial;
+      }
+  
+  #pro_email_log-com, #pro_email_reg-com{
+  margin:0px 0 0 10px;
+  width:265px;
+  border:1px solid #000;
+  }
+    #pro_email_reg-com{
+    width:245px;
+    }
+  
+  
+  #pro_password_log-com{
+  margin:10px 0 0 10px;
+  width:235px;
+   border:1px solid #000;
+  }  
+  
+  #bt_identification_valid-com, #bt_reg_valid-com{
+  background:#fff;  
+  font:bold 14px Arial;color:#000;text-transform:uppercase;
+  margin:10px 0 0 278px; 
+   border:1px solid #000;
+  }  
+  
+   #bt_reg_valid-com{
+   margin:10px 0 0 258px;
+   }
+  
+
+    .identification-com a:link, .identification-com a:visited, .identification-com a:hover {
+    background:transparent url(../img/fleche_nav.gif) no-repeat 0 2px;
+    font:bold 14px Arial; color:#000; text-decoration:underline;
+    margin:15px 0 0 0; padding:0 0 0 19px;
+    }
+
+
+  /*----- eo.no-logged -----*/
+
+
+
+  /***
+   * liste des rubriques
+   */
+  #listes-faq{
+  margin:35px 0 0 5px;
+  /*border:1px solid red; */
+  }
+
+  h2#titre{
+  margin:0;
+  font:22px Arial;color:#000;
+  border-bottom:1px dotted #000;
+  /*border:1px solid red;*/
+  }
+
+    ul.col-res{
+    z-index:3;
+    list-style-type:none;list-style-position:inside;
+    margin:13px 0 0 0;padding:0px 0 0 0;
+    /*border:1px solid red;*/
+    }
+    
+    ul.col-res li.licat{
+    background:url(../img/fleche_nav.gif) no-repeat 0 3px;
+    padding:0 0 0 0px;
+    /*border:1px solid red;*/
+    }
+    ul.col-res li p{
+    font:13px Arial;color:#D30062;
+    margin:0; padding:0 0 0 20px;
+    }
+    
+    ul.liste-itemz {
+    list-style-type:none;list-style-position:inside;
+    }
+    
+    ul.liste-itemz li.liz{
+    background:url(../img/ico_aide_ssliste.png) no-repeat 0 4px;
+    margin:4px 0 0 0;padding:0 0 1px 15px;
+    border:none;/*annule le précedent*/   border-bottom:1px dotted #000;
+    }
+    
+    ul.liste-itemz li h4{
+    display:inline;
+    cursor:pointer;
+    width:96%;
+    line-height:25px;
+    font:12px Arial;color:#000;
+    }
+    
+    ul.liste-itemz li .item-content{display:none;/*border:1px dotted #000;*/}
+    ul.liste-itemz li .item-content p{font:11px Arial;color:#000;padding:0;}
+
+    ul.liste-itemz li .item-content a:link,
+    ul.liste-itemz li .item-content a:visited,
+    ul.liste-itemz li .item-content a:hover{
+    font:11px Arial;color:#000;text-decoration:underline;
+    }      
+
+
+  

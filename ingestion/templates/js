@@ -1,0 +1,13 @@
+<script>
+  $(document).ready(function(){
+     $("#id_artist-0-name_auto").autocomplete("../artist-lookup");
+     $("#id_artist-0-name_auto").result(function(event, data, formatted){
+         if(data){
+           var name = data[0];
+           var id = data[1];
+           $("#id_artist-0-mdx_artist_id").val(id);
+         }   
+       }     
+     );
+  });
+  </script>

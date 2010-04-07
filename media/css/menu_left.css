@@ -1,0 +1,140 @@
+  /** 
+  * MENU
+  **/
+  
+  /* Drop Shadow - ds - ombre portée */
+  
+  #ds-top{
+  background: url(../img/ds_menu_top.png) no-repeat;
+  width:140px;height:5px;
+  padding:0;margin:0;
+  /*border:1px solid green;*/
+  }
+  
+  #box-bg-menu{
+  background: url(../img/ds_menu_bg.png) repeat-y;
+  width:140px;
+  padding:8px 0 4px 8px;margin:0;/*padding 4 ? */
+  /*border:1px solid green;*/
+  }
+    
+  #ds-bottom{
+  background: url(../img/ds_menu_bottom.png) no-repeat 0px 0px;
+  height:10px;width:140px;
+  padding:0;margin:0;
+  /*border:1px solid green;*/
+  }
+
+
+  /* BOX */
+  #box-menu{
+  padding:7px 7px 7px 0px;
+  width:180px;
+  padding:0;
+  /*border:1px solid green;*/
+  }
+
+
+/** Style list itemz */
+
+
+#collapsable-ul{
+list-style:none;
+width:113px;
+margin:0; padding:0;
+/*border:1px solid blue;*/
+}
+
+  #collapsable-ul li.menu{
+  background:#d30062 !important;
+  font:18px Arial;color:#fff;
+  padding:6px 0 0px 8px;
+  width:113px;
+  }
+  
+  #collapsable-ul li.menu{
+
+
+  padding:0px 0 0px 8px;
+  width:113px;
+  }
+	
+  
+  #collapsable-ul ul.ssmenu{
+	list-style:none;
+	margin:8px 0 0 -8px;
+	padding:2px 0 2px 0;
+	background: #fff; /*border:1px dashed blue;*/
+
+  }
+  ul.ssmenu li{
+	padding-right: 4px;
+	padding-left: 7px;
+	background-image: url(../img/bar_menu.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+	margin: 0px;
+	padding-top: 0px;
+	vertical-align: top;
+	width: 113px;	
+	}
+	
+  
+  /* pipe avant et apres chaque item du menu */
+  .pipe{
+  font:bold 10px verdana;color:#d30062;
+  padding:0px 0px;
+  }
+  
+    .ssmenu a.explorer:link,
+    .ssmenu a.explorer:visited,
+    .ssmenu a.explorer:hover{
+    font:bold 11px Verdana; color:#000;
+    text-decoration:none;
+    margin:0; padding:2px 0px 2px 0px;
+    display:block;
+    /*border-left:1px solid #d30062; border-right:1px solid #d30062;*/
+    }
+    
+    .ssmenu a.explorer:hover{
+    color:#D30062;
+    }
+
+    .ssmenu a.genre:link,
+    .ssmenu a.genre:visited,
+    .ssmenu a.genre:hover{
+    font:bold 11px Verdana; color:#000;
+    text-decoration:none;
+    margin: 0 0 0 0px;padding:2px 0px;
+    display:block;
+    /*border-left:1px solid #d30062; border-right:1px solid #d30062;*/
+    }
+    
+    .ssmenu a.genre:hover{
+    color:#D30062;
+    }
+    
+  /*
+  * menu on (s'applique a .explorer et .genre )
+  */
+    .ssmenu a.menu_on:link,
+    .ssmenu a.menu_on:visited,
+    .ssmenu a.menu_on:hover{
+     color:#D30062;
+    /*border-left:1px solid #d30062; border-right:1px solid #d30062;*/
+    }
+    
+
+
+    
+
+
+  /** Pub */
+  #box-pubSky{
+  margin:15px 0 0 0;
+  text-align:center;
+  /*border : 1px dotted #000;*/
+  }
+  
+  
+  

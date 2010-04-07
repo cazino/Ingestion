@@ -1,0 +1,456 @@
+/* 
+** Profil
+*
+ ------------------------------
+*/
+
+#box_main{
+float:left;
+width:820px;
+margin:40px 0 0 20px;
+/*border:1px dashed rgb(153,153,51);*/
+}
+
+  h2{
+  padding:0;margin:0;
+  font:22px Arial;color:#000;
+  border-bottom:1px dotted #000;
+  }
+
+  .titre-section{
+  font:18px Arial;color:#000;
+  margin:20px 0 0 0;padding:0;
+  cursor:pointer;
+  }
+    .titre-section span{
+    color:#D30062;
+    }  
+  
+  h4{padding:0;margin:0px 0 0 0; font-weight:normal;}
+  
+  /* Entete Section */
+  .section-profil{
+  display:none;
+  padding:0;margin:20px 0 0 0;
+  /*border-bottom:1px dotted #000;*/
+  }
+  
+  
+  /*
+  ** Historiques de commandes
+  */  
+  #prof-how2dl{
+  margin:0;
+  font:13px Arial;
+  }
+  
+  table{}
+  th{border-right:1px dotted #fff;height:20px;}
+  th.id{width:20px;}
+  th.date{width:80px;}
+  th.titre{width:383px;}
+    td.titre{text-align:left;}
+    
+  th.prix{width:55px;}
+  th.ref{width:158px;}
+  th.pay-type{width:130px;}
+
+  table thead{
+  font:bold 11px Verdana;
+  background:#aaa999;
+  }
+
+  table tbody{
+  font:normal 11px Verdana;
+  }
+    td{
+    text-align:center;
+    border-right:1px dotted #000;
+    border-bottom:1px dotted #000;
+    }
+      td p{
+      margin:3px 0 0 5px; padding:1px 0 2px 0;
+      }
+        td p a:link,
+        td p a:visited,
+        td p a:hover{
+        font:11px Verdana;color:#000;
+        }
+  
+  table tfoot{/* en case de...*/
+  font:normal 8px Verdana;
+  }
+ 
+ 
+ 
+  /*****
+   * TELECHARGEMENTS
+   **/        
+    #box-telechargements{
+    margin:8px 0 0 18px;padding:0;
+    width:98%;
+    /*border:1px solid purple;*/
+    }
+    
+    /* table */
+    table#dl-liste{ width:800px;
+    
+    }
+    
+      #dl-liste td{
+      
+      font:13px Arial;color:#000;
+      border:none;
+      padding:0 0 0px 0;
+      }
+      #dl-liste td img{border:none;}
+    
+    #dl-liste .c-title{
+    text-align:left;
+    padding:0 0 0 10px;
+    vertical-align:middle;
+    background:#d9d9c8;
+    width:670px;
+    }
+    
+      #dl-liste .c-title span{
+      color:#D30062;
+      }
+      
+      #dl-liste .c-title img{
+      vertical-align:middle;
+      margin:0 0 0 5px;
+      border:none;
+      }      
+    
+      #dl-liste .c-title .c-dl-techInfos{
+      font:11px Arial;color:#000;
+      }
+    
+   .c-title a:link,
+   .c-title a:visited,
+   .c-title a:hover{
+    font:11px Verdana;color:#000;
+    }
+        
+    #dl-liste .c-dl-album{
+    /*background:#fff url(../img/ico_cart_album.png) no-repeat top right;*/
+    background:#dbdace;
+    vertical-align:top;
+    text-align:center;
+    width:130px;
+    }
+    
+   .c-dl-album a:link,
+   .c-dl-album a:visited,
+   .c-dl-album a:hover{
+    background:#AAA999;
+    font:bold 11px Arial;color:#fff;text-decoration:none;
+    display:block;
+    }
+      .c-dl-album a:hover{
+      background:#EBEADF;
+      color:#000;
+      }
+    
+    #dl-liste .c-dl-track{
+    background:#dbdace;
+    vertical-align:top;
+    text-align:center;
+    width:130px;
+    }
+    
+   .c-dl-track a:link,
+   .c-dl-track a:visited,
+   .c-dl-track a:hover{
+    background:#AAA999;
+    font:bold 11px Arial;color:#fff;text-decoration:none;
+    display:block;
+    }
+      .c-dl-track a:hover{
+      background:#EBEADF;
+      color:#000;
+      }
+    
+    
+    #dl-liste tr.dl-liste-sep td{
+    background:#fff;
+    height:3px;
+    }
+    
+    /*
+    .zebra-even{}
+    .zebra-odd{}
+   */
+
+  /*----- bo.bt dl ----
+  */
+  .box-bt-dl{
+  margin:10px 0 0 2px;
+  width:159px;
+  }
+  
+  .bt-dl{
+  background:url(../img/bt_action_pay-dl_bg.png) repeat-x 0px 0px;
+  font:15px Arial; color:#fff; vertical-align:middle;
+  margin:0px 0 0 0px; padding:0 0 10px 0px;
+  height:34px; width:128px;
+  cursor:pointer;
+  border:none;  
+  float:left;
+  }
+  
+  .bg-bt-dl-left{
+  width:11px; height:32px;
+  margin:0px 0 0 0px;
+  background: url(../img/bt_action_pay-dl_left.png) no-repeat 0px 0px;
+  /*border:1px solid red;*/
+    float:left;
+  }
+    .bg-transp{
+    background:url(../img/bt_action_pay-dl_left.png) no-repeat 0px 0px;
+    }
+
+
+  .bg-bt-dl-right{
+  background:#dbdace url(../img/bt_action_pay-dl_right.png) no-repeat 0px 0px;/*#dbdace*/
+  width:20px; height:32px;
+  margin:0px 0 0 0px;
+  float:left;
+  }
+  /*----- eo.bt recup ----*/
+
+
+    
+    /*****
+     * ALBUMS (list)
+     *
+     */
+    .album-titre{}
+    
+    .tr-album{display:none;}
+    
+    .album-tracklisting{
+    margin:5px 0 15px 5px;padding:0 0 0 4px;
+    /**/
+    /*border:1px dashed pink;*/    
+    }
+    
+
+    .c-dl-track-inside-album{
+    vertical-align:top;
+    text-align:center;
+    width:100px;
+    }
+    
+    .album-tracklisting a:link,
+    .album-tracklisting a:visited,
+    .album-tracklisting a:hover{
+    font:11px Verdana;color:#000;text-decoration:none;
+    }
+      .album-tracklisting a:hover{
+      text-decoration:underline;
+      }
+
+  /* msg d'avertisseemnt calabash downloads */
+  #box-clb-warn-b4-070309, #box-clb-warn-b4-280209{
+  background:#FFF6BF;
+  margin:15px 0 0 5px; padding:0 0 0 20px;
+  border-top:2px solid #FFD324;border-bottom:2px solid #FFD324;
+  font:13px Arial;color:#000;
+  }
+
+    /**
+     * credit-section
+     */
+    #credit-section{cursor:default; }
+    #box-buy-credit{
+    margin:10px 0 0 20px;
+    }
+    
+    
+    #box-buy-credit a:link,
+    #box-buy-credit a:visited,
+    #box-buy-credita:hover{
+    font:18px Arial;color:#D30062;text-decoration:none;
+    }
+      #box-buy-credit a:hover{
+      text-decoration:underline;
+      }
+      
+    /* credit focus
+      110209-114431
+       - focus sur le nb de credit
+       - s'affiche lorsque : "profil.php?a=credit"
+     */
+    .focus-nb-credit{
+    background:#DEE25B;
+    padding:2px;
+    font-size:18px;
+    }
+
+
+
+    /**
+     * support
+     */
+    div#support-section{cursor:default; }
+    
+    ul#support-section a:link,
+    ul#support-section a:visited,
+    ul#support-section a:hover{
+    font:11px Arial;color:#000;text-decoration:none;
+    }
+      ul#support-section a:hover{
+      text-decoration:underline;
+      }
+      
+      
+      
+      
+      
+
+  /******
+  * dernier cart 
+  **/
+  #olc-liste{ width:100%; }
+  .unactive{cursor:default;}
+  
+  #olc-liste td{
+  padding:4px 0 4px 4px;
+  background:#d9d9c8;
+  border-bottom:2px solid #fff;
+  border-right:none;
+  font:13px Arial;color:#000;
+  }
+
+  
+  #olc-liste .c-title{
+  text-align:left;
+  width:390px;
+  }
+
+  #olc-liste .c-prix, #cont-sum-olcart .c-prix{width:55px;text-align:center;}
+  
+  #cont-sum-olcart td{
+  background:#dbdace;
+  font-weight:bold;
+  text-align:left;
+  }
+      
+      
+  /*----- 
+  //////////////   bo.bt recup cart -
+  ---*/
+  .box-bt-recup-cart{
+  margin:15px auto 0 auto;
+  width:259px;
+  }
+
+  .bt-recup-cart{
+  background:url(../img/bt_action_pay-dl_bg.png) repeat-x 0px 0px;
+  font:bold 15px Arial; color:#fff; vertical-align:middle;
+  margin:0px 0 0 0px; padding:0 0 8px 0px;
+  height:33px; 
+  cursor:pointer;
+  border:none;  
+  float:left;
+  } 
+    .bt-recup-cart:hover{/* hum */
+    color:#D30062;
+    }
+  
+  .bg-left-recup-cart{
+  width:11px; height:33px;
+  margin:0px 0 0 0px;
+  background:#fff url(../img/bt_action_pay-dl_left.png) no-repeat 0px 0px;
+  /*border:1px solid red;*/
+    float:left;
+  }
+
+
+  .bg-right-recup-cart{
+  background: url(../img/bt_action_pay-dl_right.png) no-repeat 0px 0px;/*#dbdace*/
+  width:20px; height:33px;
+  margin:0px 0 0 0px;
+  float:left;
+  }
+  /*----- eo.bt recup ----*/
+  
+      
+/**** FORM -- DEPRE depuis userCenter ******/
+
+form#upd-inscription {position:relative;z-index:1;
+font:12px Arial;color:#000;
+/*border:1px dotted red;*/
+}
+
+  
+	#upd-inscription fieldset{border:1px solid #000;}
+  #upd-inscription legend{font:bold 14px Arial;color:#D30062;}
+	
+	#upd-inscription h4{
+  font:bold 14px Arial;color:#000;
+  border-bottom:1px dotted #000;
+  }
+
+	#upd-inscription label,  #upd-inscription label.oblig{
+	display:block;
+	float:left;
+	width:257px;
+	height:15px;
+	text-align:right;
+	margin:0 10px 0px 0;padding:3px 0 0 0;
+	/*border:1px dotted green;*/
+	}
+	
+	 #upd-inscription label:first-letter{text-transform: uppercase;}
+	 /*#inscription label.oblig{font-weight:bold;}*/
+	 #upd-inscription label.oblig:after{content:'*';margin:0 0 0 2px;font:bold 12px Georgia;color:#D30062;}
+
+	 
+	#upd-inscription input[type=text],	#upd-inscription input[type=password], #upd-inscription textarea{
+	margin:0 0 3px 0;
+	/*padding:2px 0 2px 5px;*/
+	width:260px;
+	border:1px solid #000;
+	float:left;
+	}
+		 #upd-inscription textarea{height:100px;margin:0 0 5px 0;}
+
+	/* box civilité*/
+	#box-group-radio{
+	float:left;
+  width:260px;
+  height:15px;
+  margin:0 0 3px 0;padding:3px 0 0 0;
+
+	/*border:1px solid purple;*/
+	}
+
+	#box-group-radio label{
+	display:inline;
+	float:none;
+	width:70px;
+	font:12px Arial;color:#000;
+	text-align:left;
+	margin:0 15px 0px 5px;
+	border:none;/*border:1px dotted purple;*/
+	}
+
+	#box-group-radio input[type=radio]{
+	margin:0;padding:0;
+	/*vertical-align:middle;*/
+	}
+
+  
+	input#bt_profil_upd{
+	margin:15px auto 0 465px;
+	width:68px;height:25px;
+	background:url(../img/bg_bt_submit_inscription.png) no-repeat;
+	border:none;
+	}
+	
+	
+	
+  

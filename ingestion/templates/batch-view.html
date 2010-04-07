@@ -1,0 +1,138 @@
+
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="../../media/css/ingestion/main.css" type="text/css" />
+  <link rel="stylesheet" href="../../media/css/jquery/jquery.autocomplete.css" type="text/css" />
+  <link rel="stylesheet" href="../../media/css/jquery/main.css" type="text/css" />
+  <script type="text/javascript" src="../../media/js/jquery/jquery-1.4.2.js"></script>
+  <script type="text/javascript" src="../../media/js/jquery/jquery.dimensions.js"></script>
+  <script type="text/javascript" src="../../media/js/jquery/jquery.autocomplete.js"></script>   
+  
+{% for artistform in artist_formset.forms %}
+{{artistform.media}}
+{% endfor %}
+</head>
+<body>
+<div id="global">
+<div id="main-title">Ingestion IDOL &nbsp; <a href="../batch-view/">Rafraichir</a></div>
+<br>
+<br>
+<form action="../batch-view/" method="post">
+{{post}}
+<div class="formset">
+<div class="section-title">Artistes</div>
+{{artist_formset.management_form}}
+{% for artistform in artist_formset.forms %}
+     <div class="form">
+        {{ artistform.pk }} {{ artistform.name_hidden }} {{ artistform.release_title_hidden }} 
+	{{ artistform.name_hidden }} {{ artistform.mdx_artist_id }} 
+	<ul class="menu">
+          <li><span class="bold">{{ artistform.name }}</span>&nbsp;({{ artistform.release_title }})</li>
+	  <li>Check:&nbsp; {{ artistform.name_auto }}</li>
+	  <li>Action:&nbsp; {{artistform.create}} </li>
+          <li>URL:&nbsp; {{artistform.url}} </li>
+	</ul>
+	<ul class="menu-error">
+	{% for field in artistform %}
+	     {% for error in field.errors %}
+	      <li> {{error}} </li>
+	     {% endfor %}
+	{% endfor %}
+	</ul>
+	{% ifnotequal artistform.report None %}
+      <ul class="report">
+	{% if artistform.report.success %}
+	 <li class="report-success">Succès Ingestion&nbsp;
+	   {% if artistform.report.admin_url %}
+	      <a href="{{artistform.report.admin_url}}" target="_blank">Fiche artiste</a>
+	   {% endif %}
+	 </li>
+	{% else %} 
+	 <li class="report-failure">{{artistform.report.error}}</li>      
+        {% endif %}
+      </ul>
+      {% endifnotequal %}
+    </div>	
+{% endfor %}
+</div>
+
+<div class="formset">
+<div class="section-title">Labels</div>
+{{label_formset.management_form}}
+{% for labelform in label_formset.forms %}
+    <div class="form">
+      {{ labelform.pk }} {{ labelform.name_hidden }} {{ labelform.release_title_hidden }} 
+      {{ labelform.name_hidden }} {{ labelform.mdx_label_id }} 
+      <ul class="menu">
+          <li><span class="bold">{{ labelform.name }}</span>&nbsp;({{ labelform.release_title }})</li>
+	  <li>Check:&nbsp; {{ labelform.name_auto }}</li>
+	  <li>Action:&nbsp; {{labelform.create}} </li>
+      </ul>
+      <ul class="menu-error">
+	{% for field in labelform %}
+	     {% for error in field.errors %}
+	      <li> {{error}} </li>
+	     {% endfor %}
+	{% endfor %}
+      </ul>
+      {% ifnotequal labelform.report None %}
+      <ul class="report">
+	{% if labelform.report.success %}
+	 <li class="report-success">Succès ingestion&nbsp;
+	   {% if labelform.report.admin_url %}
+	      <a href="{{labelform.report.admin_url}}" target="_blank">fiche label</a>
+	   {% endif %}
+	 </li>
+	{% else %} 
+	 <li class="report-failure">{{labelform.report.error}}</li>      
+        {% endif %}
+      </ul>
+      {% endifnotequal %}
+    </div>  
+{% endfor %}
+</div>
+
+<div class="formset">
+<div class="section-title">Releases</div>
+
+{{release_formset.management_form}}
+{% for releaseform in release_formset.forms %}
+    <div class="form">
+    {{ releaseform.pk }}{{ releaseform.title_hidden }}{{ releaseform.artist_name_hidden }}
+    {{ releaseform.label_name_hidden }}
+      <ul class="menu">
+          <li><span class="bold">{{ releaseform.title }}</span>&nbsp;
+	    ({{ releaseform.artist_name }} - {{ releaseform.label_name }})
+	  </li>
+	  <li>Annuler:&nbsp; {{ releaseform.annuler }}</li>
+      </ul>
+      <ul class="menu-error">
+	{% for field in releaseform %}
+	     {% for error in field.errors %}
+	      <li> {{error}} </li>
+	     {% endfor %}
+	{% endfor %}
+      </ul>
+      {% ifnotequal releaseform.report None %}
+      <ul class="report">
+	{% if releaseform.report.success %}
+	 <li class="report-success">Succès ingestion&nbsp;
+	   {% if releaseform.report.admin_url %}
+	      <a href="{{releaseform.report.admin_url}}" target="_blank">Fiche album</a>
+	   {% endif %} 
+	   {% ifnotequal releaseform.artist_report None %}
+	      &nbsp;<a href="{{releaseform.artist_report.admin_url}}" target="_blank">Fiche artiste</a>
+	   {% endifnotequal %} 
+	 </li>
+	{% else %} 
+	 <li class="report-failure">{{releaseform.report.error}}</li>      
+        {% endif %}
+      </ul>
+      {% endifnotequal %}
+    </div>
+{% endfor %}
+</div>
+<input type="submit" value="Submit" id="submit-button"/>
+</form>
+</div>
+</body>

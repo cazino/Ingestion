@@ -1,0 +1,28 @@
+<?
+
+if(!isset($_POST['jstag'])){
+	$jstag = "0";
+}
+else{
+
+	$jstag = $_POST['jstag'];
+	$ip = $_SERVER['REMOTE_ADDR'];
+	$session = $_COOKIE["mondomix_mp3_sid"];
+	$cookie = $_COOKIE['Apache'];
+	$url = $_SERVER['HTTP_REFERER'] ;
+	$today = date("Y-m-d H:i:s");	
+	
+	$db = new mysqli("localhost","admin","Wix3Pmmondo", "mdxmusic_dev");
+	if(mysqli_connect_errno()){
+		$err_conn = mysqli_connect_error();
+	}
+	
+	$query = sprintf("INSERT INTO `cadi_007` (`cadi_jstag`,`cadi_ip`,`cadi_session`,`cadi_cookie`,`cadi_url`,`cadi_datetime`) VALUES ('%s','%s','%s','%s','%s','%s')",$jstag,$ip,$session,$cookie,$url,$today);
+		
+	$db->query($query) ;
+}
+  
+	  
+echo $jstag;   
+
+?>

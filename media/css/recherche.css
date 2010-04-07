@@ -1,0 +1,185 @@
+/* 
+** RECHERCHE
+** 160708-19595
+*/
+
+
+  /***
+   *
+   */
+
+  h2#titre{
+  float:left;
+  margin:0;
+  font-size:20px;
+  width:270px;
+  /*border:1px solid red;*/
+  }
+  
+  #box-rappel-rq{
+  float:left;
+  font:bold 13px Arial;color:#000;
+  margin:0;
+  /*border:1px solid blue;*/
+  }
+  
+  #rappel-rq{
+  color:#D30062;
+  }
+  
+  #box-alaune{
+  float:left;
+  margin:0 0 0 0px;
+  width:810px;
+  /*border:1px solid red;*/
+  } 
+  
+    #res-9items h3{
+    background:url(../img/bg_blocks_neso.png) no-repeat;
+    font:13px Arial;color:#fff; line-height:20px;
+    margin:0;padding:0px 0 0 20px;
+    height:20px;
+    }
+  
+      #res-9items ul.col-res{
+      float:left;
+      z-index:3;  
+      font:bold 10px Verdana;color:#000;
+      list-style-type:none;list-style-position:inside;
+      padding:0px 0 0 0;margin:3px 0 0 0;
+      /*border:1px solid red;*/
+      }
+      
+      #res-9items li{
+      z-index:3;  
+      padding:0px 0px;
+      width:270px;
+      /*border:1px solid red;*/
+      }
+      
+      /**
+       * CSS 1ere et derniere vignettes 
+       * dyn. modifiée via JQ       
+      **/
+      #res-9items .box-tof{
+      float:left;
+      padding:2px 5px;
+      background:url(../img/bg_photo_alaune.png) repeat-y right top;
+      }
+      
+        #res-9items .box-tof img{
+        padding:2px;
+        /*background:url(../img/contour_cover.png) no-repeat right top;*/
+        background:#fff;
+        }
+      
+      #res-9items .box-texte{
+      float:left;
+      padding:2px 0 0px 0px;margin:0 0 0 2px;
+      width:137px;
+      background:#fff;
+      border-bottom:1px dotted #c4c39e;
+      /*border:1px dotted red;*/
+      /**/height:76px;
+      }
+      
+      #res-9items .box-texte p{
+      margin:3px 0 0 0;
+      }
+      
+      #res-9items .box-texte span{
+      font-weight:normal;
+      }
+      
+      .nb-supp-media{font-weight:normal;}
+      
+      .box-texte a:link,
+      .box-texte a:visited,
+      .box-texte a:hover{
+      font:10px Verdana;color:#000;text-decoration:none;
+      padding:0;margin:0;
+      padding:0 0 0 0px;margin:10px 0 0 0px;
+      }
+     
+      a.dl:link,
+      a.dl:visited,
+      a.dl:hover{
+      background: url(../img/fleche_bas.png) no-repeat left top;
+      font:10px Verdana;color:#000;text-decoration:none;
+      display:block;
+      padding:0 0 0 25px;margin:10px 0 0 3px;
+      }
+     
+     
+    /** TABLE **/
+    #resultats-complementaires{width:100%;margin:20px 0 0 0;}
+    
+    th{
+    text-align:left;
+    font:bold 13px Arial;color:#646560;
+    padding:0 0 10px 0;
+    }
+    
+    td{
+    padding:0 0 0px 0;
+    border-top:1px dotted #ccc;
+    }
+    
+    
+    .se-art-nom{
+    font:11px Verdana;color:#000;
+    width:203px;
+    }
+      .se-art-nom a:link,
+      .se-art-nom a:visited,
+      .se-art-nom a:hover
+      {
+      font:10px Verdana;color:#000;text-decoration:none;
+      }    
+    
+    .se-alb-titre{
+    font-weight:bold;
+    width:430px;
+    }
+    
+    .se-dl{}
+      
+      .se-dl a.dl:link,
+      .se-dl a.dl:visited,
+      .se-dl a.dl:hover
+      {
+      margin:0px 0 0 20px;
+      }
+    
+  /* suclass #ctx-menu{*/
+  #ctx-menu{
+  /*margin:0px 0 0 50px;*/
+  margin:45px 0 0 50px;
+  }
+
+
+  #res-zero{
+    
+    
+  }
+  /*box-dotcom-results*/
+  #box-dotcom-results{
+    margin:30px 0 0 0;
+  }
+  
+  #box-dotcom-results ul{
+    list-style:none;
+    padding:0;
+  }
+  
+  #box-dotcom-results h4{padding:0;}
+     
+  #box-dotcom-results a:link,
+  #box-dotcom-results a:visited,
+  #box-dotcom-results a:hover
+  {
+  font:10px Verdana;color:#000;text-decoration:none;
+  }
+
+
+  

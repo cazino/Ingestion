@@ -1,0 +1,457 @@
+/* 
+** structure
+**
+*/
+
+
+  /***
+   * Construction
+   *
+   */        
+  #block1{}
+  
+  #block1-col-left{
+  float:left;
+  width:580px;
+  /*border:1px solid #0055FF;*/
+  }
+  
+  #block1-col-right{
+  float:right;
+  margin:0 0 0 3px;
+  width:225px;
+  /*border:1px solid #00AEFF;*/
+  }
+  
+  /* en dessous */
+  #block2{
+  /*width:822px;*/
+  }
+  
+  #block2-col-left{
+  float:left;
+  /*width:xxxpx;*/
+  border:1px solid #0055FF;
+  }  
+  
+  
+  /****
+   *  
+  * Design block 1 col. left
+  */   
+
+
+  /**
+   * Fil Ariane (continent/genre)
+  */
+  #box-fil-ariane{
+  font:11px Verdana;color:#000;
+/*  border:1px solid #0055FF;*/
+  }
+ 
+  #box-fil-ariane a:link,
+  #box-fil-ariane a:visited,
+  #box-fil-ariane a:hover{
+  padding:0;  margin:0px;
+  font:bold 11px Verdana;color:#000;
+  text-decoration:none;
+ }
+  #box-fil-ariane .focus{
+  color:#D30062; font:bold 12px Verdana;
+  }
+  
+  
+  
+
+
+  #box-slideshow{
+  margin:20px 0 0 0; padding:12px;
+  width:547px;
+  background:url(../img/bg_home_pave_bottom.png) repeat;
+  border:1px solid #000;
+  }
+  
+  #bg-slideshow{
+  padding:4px;
+  background:#fff;  
+  /*border:1px dashed #666633;*/
+  }
+  
+  #box-slideshow-texte{
+  background:#fff;
+  width:537px; text-align:center;
+  padding:0px; margin:5px 0 0 0;
+  height:40px;
+  /*border:1px dashed red;*/
+  }
+  
+  
+  /* object slideshow */
+  #highlight{
+  padding:0px;margin:0;
+  }
+
+  /**
+  * Carousel - Carrousel Flash
+  */   
+  #box-caroussel{
+  margin:20px 0 0 0;
+  width:535px;
+  /*border:1px dashed #666633;*/
+  }
+  
+    #box-caroussel h3{
+    background:url(../img/bg_nouveautes_home.png) no-repeat;
+    font:13px Arial;color:#fff;
+    margin:0;padding:0px 0 0 20px;
+    height:17px;
+    }
+    
+    #carousel{
+    margin: 10px 10px 0 0px;
+    }
+
+
+
+  /**
+   * CONTINENT
+   */        
+  
+  
+  .box-recherche{
+  margin:20px 0 0 0;
+  }
+  
+  .recherche-rubrique{
+  margin:20px 0 0px 0;
+  font-size:13px;font-weight:bold;
+  } 
+  
+  /* général */
+  .box-pays-par-continent{
+  margin:20px 0 0 0;
+  /*border:1px dashed #666633;*/
+  }
+  
+  .box-artistes-par-pays{
+  margin:20px 0 0 0;
+  /*display:none;*/
+  }
+    .box-pays-par-continent h3, .box-artistes-par-pays h3, .box-recherche h3{
+    font:13px Arial;color:#fff;
+    margin:0;padding:0px 0 0 20px;
+    height:17px;
+    background:url(../img/bg_nouveautes_home.png) no-repeat;
+    }
+    
+    #pays-par-continent-liste{/*--- DEPRE.030708-123610 */
+    margin:0 0 0 20px;
+    font:11px Arial;color:#000;
+    border:1px solid #000;
+    }
+    
+    #artistes-par-pays-liste{
+    display:none;
+    }
+    
+  #artistes-par-lettre-liste{
+  margin:5px 0 0 0; padding:0;
+  list-style-position:inside;
+  }
+    #artistes-par-lettre-liste li{ }
+  
+    .recherche-assistee a:link,
+    .recherche-assistee a:visited,
+    .recherche-assistee a:hover{
+    font:11px Arial;color:#000;
+    padding:0;    margin:0;
+    text-decoration:none;
+    }
+    
+    
+  /**
+  * Alphabet : choix par pays (cf css globale)
+  */
+
+
+
+
+  /**
+  * Design block 1 col. right
+  *  Radio Tops, coup de coeur 
+  */ 
+  
+  /* contexte menu + radio --> voir "mondomixmusic.css" */
+
+  
+   
+  /** best selling */
+  #box-meilleures-ventes{
+  width:225px;
+  margin:22px 0 0 0;
+  }
+  
+    #box-meilleures-ventes h3{
+    background:url(../img/bg_blocks_neso.png) no-repeat;
+    font:13px Arial;color:#fff; line-height:20px;
+    margin:0;padding:0px 0 0 20px;
+    height:20px;
+    }
+    
+    #box-mv-titres{
+    margin:24px 0 0 0;
+    }
+    
+
+    
+    
+    #box-mv-albums{
+    margin:24px 0 0 0;
+    
+    }    
+    
+         
+      #box-mv-titres h4, #box-mv-albums h4{ font:16px Arial;color:#d30062; padding:0 0 2px 0;margin:0;border-bottom:1px dashed #c4c39e; }
+      #box-mv-titres ol, #box-mv-albums ol{ font:bold 10px Verdana;color:#000;list-style:none; padding:0;margin:11px 0 0 0px;}
+      #box-mv-titres li, #box-mv-albums li{padding:0px 0;
+      /*border:1px dashed red;*/
+      }
+      #box-mv-titres li span, #box-mv-albums li span{ font-weight:normal; }
+      #box-mv-titres li p.titre, #box-mv-albums li p.titre{
+       background:url(../img/fleche_bas.png) no-repeat right top;
+      font-weight:bold;
+      padding:0;margin:0px 0 0 0px;
+      cursor:pointer;
+      /*border:1px dashed blue; */
+      }
+      
+
+      
+     #box-meilleures-ventes a.dl:link, #box-meilleures-ventes a:link,
+     #box-meilleures-ventes a.dl:visited,  #box-meilleures-ventes a:visited,
+     #box-meilleures-ventes a.dl:hover,  #box-meilleures-ventes a:hover
+    {
+    background: url(../img/fleche_bas.png) no-repeat left top;
+    font:10px Verdana;color:#000;text-decoration:none;
+    display:block;
+    padding:0 0 0 25px;margin:10px 0 0 3px;
+    }
+    
+    #box-meilleures-ventes a:link,
+    #box-meilleures-ventes a:visited,
+    #box-meilleures-ventes a:hover{
+    background: none;
+     display:inline;
+     padding:0;margin:0;
+    }
+
+
+
+
+
+  /***
+   *BLOCK 2
+   */
+  #block2{
+  margin:35px 0 0 0;
+  }
+  
+  #box-alaune{
+  float:left;
+  margin:20px 0 0 0px;
+  width:237px;
+  /*border:1px solid yellow;*/
+  } 
+  
+    #box-alaune h3{
+    background:url(../img/bg_blocks_neso.png) no-repeat;
+    font:13px Arial;color:#fff; line-height:20px;
+    margin:0;padding:0px 0 0 20px;
+    height:20px;
+    }
+  
+      #box-alaune ul{
+        z-index:3;  
+      font:bold 10px Verdana;color:#000;
+      list-style-type:none;list-style-position:inside;
+      padding:0px 0 0 0;margin:3px 0 0 0;
+      }
+      #box-alaune li{
+        z-index:3;  
+      padding:0px 0px;
+      }
+      
+      /**
+       * CSS 1ere et derniere vignettes 
+       * dyn. modifiée via JQ       
+      **/
+      #box-alaune .box-tof{
+      float:left;
+      padding:2px 5px;
+      background:url(../img/bg_photo_alaune.png) repeat-y right top;
+      }
+      
+        #box-alaune .box-tof img{
+        padding:2px;
+        /*background:url(../img/contour_cover.png) no-repeat right top;*/
+        background:#fff;
+        }
+      
+      #box-alaune .box-texte{
+      float:left;
+      padding:2px 0 0 0px;margin:0 0 0 2px;
+      width:137px;
+      background:#fff;
+      border-bottom:1px dotted #c4c39e;
+            /*border:1px dotted red;*/
+      /**/height:73px;
+      }
+      
+      #box-alaune .box-texte p{
+      margin:3px 0 0 0;
+      }
+      
+      #box-alaune .box-texte span{
+      font-weight:normal;
+      }
+      
+      .box-texte a.dl:link,.box-texte a:link,
+      .box-texte a.dl:visited,  .box-texte a:visited,
+      .box-texte a.dl:hover,  .box-texte a:hover
+      {
+      background: url(../img/fleche_bas.png) no-repeat left top;
+      font:10px Verdana;color:#000;text-decoration:none;
+      display:block;
+      padding:0 0 0 25px;margin:15px 0 0 3px;
+      }
+      
+      .box-texte a:link,
+      .box-texte a:visited,
+      .box-texte a:hover{
+      background: none;
+       display:inline;
+       padding:0;margin:0;
+       font-weight:bold;
+      }
+      
+     
+      
+  /***
+   * Box Coup de Coeur
+  **/  
+       
+  #box-coupdecoeur{
+  float:left;
+  margin:20px 0 0 80px;
+  width:237px;
+  /*border:1px solid yellow;*/
+  } 
+  
+    #box-coupdecoeur h3{
+    background:url(../img/bg_blocks_neso.png) no-repeat;
+    font:13px Arial;color:#fff; line-height:20px;
+    margin:0;padding:0px 0 0 20px;
+    height:20px;
+    }
+  
+      #box-coupdecoeur ul{
+      font:bold 10px Verdana;color:#000;
+      list-style-type:none;list-style-position:inside;
+      padding:0px 0 0 0;margin:3px 0 0 0;
+      }
+      #box-coupdecoeur li{
+      padding:0px 0px;
+      }
+      
+      /**
+       * CSS 1ere et derniere vignettes 
+       * dyn. modifiée via JQ       
+      **/
+      #box-coupdecoeur .box-tof{
+      float:left;
+      padding:2px 5px;
+      background:url(../img/bg_photo_alaune.png) repeat-y right top;
+      }
+      
+        #box-coupdecoeur .box-tof img{
+        padding:2px;
+        /*background:url(../img/contour_cover.png) no-repeat right top;*/
+        background:#fff;
+        }
+      
+      #box-coupdecoeur .box-texte{
+      float:left;
+      padding:2px 0 0 0px;margin:0 0 0 2px;
+      width:137px;
+      background:#fff;
+      border-bottom:1px dotted #c4c39e;
+            /*border:1px dotted red;*/
+      /**/height:73px;
+      }
+      
+      #box-coupdecoeur .box-texte p{
+      margin:3px 0 0 0;
+      }
+      
+      #box-coupdecoeur .box-texte span{
+      font-weight:normal;
+      }
+      
+ 
+
+
+  
+  /**
+   * Promotions 
+   *        
+  **/
+  #box-promotions{
+  float:right;
+  margin:0;
+  width:300px;
+  }
+    
+    #box-promotions img{/* 38px  demargin-top pour la 2nde img via JQ */
+    padding:2px;
+    border:1px solid #CBCBCB;
+  
+    }
+
+
+
+  /**
+   * Block texte bas $$ pres. mondomix mp3 
+   *        
+  **/
+  #block3-wide{
+  margin:40px 0 0 0;
+  padding:16px 0;
+  background:url(../img/bg_home_pave_bottom.png);
+  }
+  
+    #block3-wide h4{
+    background:url(../img/fleche_nav.gif) no-repeat 0 2px;
+    padding:0 0 0 19px;
+    margin:0px 0 0 30px;
+    }
+    
+    #block3-wide a:link,
+    #block3-wide a:visited,
+    #block3-wide a:hover{
+    background:none;
+    padding:0;margin:0;
+    color:#000;
+    }
+    
+   #block3-wide p{
+   margin:0 0 0 30px;
+   width:781px;
+   text-align:justify;
+  /*border:1px solid #CBCBCB;*/
+   }
+
+
+
+
+
+

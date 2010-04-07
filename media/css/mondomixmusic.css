@@ -1,0 +1,807 @@
+
+/**********
+ **********
+ ****
+ **** STRUCURE GENERALE
+ ****
+ **********
+*********/
+ 
+body{
+font:normal 11px Arial;
+margin:0; padding:0;
+}
+
+
+#box_global{
+margin:0 auto;
+width : 985px; /* dropshadow included*/
+padding:0 0 0 0px;
+/*border:1px dashed #000;*/
+}
+
+#box_tetiere{
+background:#fff;
+/*border:1px solid green*/
+}
+
+#box_nav-top{
+padding:0 0 0 0px;
+/*border:1px solid rgb(0,102,153)*/
+}
+
+#box_nav-left{
+float:left;
+width:145px;
+/*border:1px solid #CCCC33;*/
+}
+
+#box_main{
+margin:0px 0 0 14px;
+float:left;
+width:820px;
+/*border:1px dashed #00D4FF;*/
+}
+
+#box-footer{
+margin:20px 0 0 0;
+/*border:1px solid rgb(204,204,51)*/
+}
+
+
+/* other */
+.clear{clear:both;}
+
+
+  /* Global **/
+  .elem-fleche{
+  padding:0 0 0 16px;
+  background:url(../img/fleche_nav.gif) no-repeat 0px 2px;
+  }
+  
+  
+  #ctx-menu{
+  display:none;
+  background:#C5C9B2;
+  position:absolute;
+  z-index:5;  
+  margin:-5px 0 0 100px; padding:4px 0;
+  width:140px;
+  font:11px Arial;color:#000;
+  border:1px solid #000;
+  }
+   
+    #ctx-menu .info{
+    background:url(../img/bg_photo_alaune.png);
+    padding:0px 0 0 9px; margin:-4px 0 0 0;
+    display:block;
+    }
+    
+    #ctx-menu a.bt-lien-fleche:link,
+    #ctx-menu a.bt-lien-fleche:visited,
+    #ctx-menu a.bt-lien-fleche:hover{
+    padding:0px 0 0px 16px;
+    margin:4px 0 0 9px;
+    font:bold 11px Arial;color:#d30062;text-decoration:none;
+    background:url(../img/fleche_nav.gif) no-repeat 0px 2px;
+    display:block;
+    }
+    
+    .err-msg-cart-add{
+    padding:2px 0 0px 18px;
+    margin:4px 0 0 9px;
+    font:11px Arial;color:#d30062 ;text-decoration:none;
+    background:url(../img/ico_famfam/warning_red.png) no-repeat 0px 0px;
+    display:block;
+    }
+  
+
+/**********
+ **********
+ ****
+ **** STYLE APPLIQUES
+ ****
+ **********
+*********/
+ 
+ 
+/*****
+ *** Sur TETIERE
+ */
+ 
+/** BG **/
+
+#box_chxLang-pub_bg{
+background:#fff url(../img/bg_banniere_top.gif) no-repeat;
+padding:0 6px 8px 6px;
+/*border:1px solid red;*/
+}
+
+
+#box_chxLang-pub{
+background:#fff;
+width:972px;
+padding:0 0px 0px 0px;
+/*border:1px solid #669;*/
+}
+ 
+ 
+/** Choix Langue */
+#box-chxLang{
+background:#fff;
+float:left;
+width:235px;
+margin:60px 0 0px 0px;
+/*border:1px solid red;*/
+}
+
+  #box-chxLang a:link, #box-chxLang a:visited, #box-chxLang a:hover{
+  font:9px Arial;color:#000;text-decoration:none;
+  display:block;
+  padding:0 2px;  margin:0 0 2px 0;
+  width:67px;
+  }
+  
+  #box-chxLang a:hover, #box-chxLang a.selected{
+  background:#000;color:#fff;
+  }
+    /*#box-chxLang a:hover{background:#000;color:#fff;}*/
+    
+  #box-chxLang a .icon-chx-lg{
+  background:url(../img/bg_choix_langues.png) repeat-x;
+  color:#000;
+  }
+  
+ 
+
+
+
+/** Pub Top */    
+#box-pub{
+float:left;
+width:728px;
+/*border:1px solid green;*/
+}
+
+#fake-pub{
+width:728px;height:90px;
+margin:5px 0 0 10px;
+/*border:2px solid green;*/
+}
+    
+
+  /***
+   * BOX LOGO et IDENTIFICATION
+   * baseline-catchline-beta
+  */     
+  #box_logo-identification{
+  margin:3px 0 0 0;
+  padding:0 0 0 3px;
+  width:976px;
+  /*border:1px solid green;*/
+  }
+
+    /** LOGO */
+    #box-logo-catchline{
+    margin:0;
+    /*border:1px solid green;*/
+    }
+
+    #box-logo{
+    float:left;
+    }
+      #box-logo img { border:none; }
+    
+    #box-catchline{
+    float:left;
+    padding:41px 0 0 0;
+    }
+    
+    #box-catchline .beta{
+    margin:0px 0 0 0;
+    font:bold 11px Verdana; color: #D30062;
+    text-transform:uppercase;
+    }
+        
+    #box-catchline .catchline{
+    margin:0px 0 0 0;padding:0;
+    font:bold 16px Arial;color:#000;text-transform:uppercase;
+    width:460px;
+    /*border:1px solid green;*/
+    }
+    
+    #box-catchline .baseline-soustitre{
+    margin:0px 0 0 0;padding:0;
+    font:10px Verdana; color:#000;
+    /*line-height:0.3em;*/
+    }
+  
+  
+  /** IDENTIFICATION-INSCRIPTION-NL **/
+  #box-identification{
+  margin:0 0 0 0px;
+  width:979px;
+  /*border:1px solid red;*/
+  }
+  
+  .bt-toolz-tetiere{
+  background:url(../img/bg_inscription.gif) repeat-x 0px 0px;
+  margin:0px 0 0 0;padding:6px 0 5px 5px;
+  font:10px Arial;color:#000;
+  }
+  
+  #bt-reg{
+  float:right;
+  width:120px;
+  margin:0 0 0 0px;
+  border-right:1px solid #fff;
+  }
+    
+  #bt-auth{
+  float:right;
+  width:130px;
+  margin:0 2px 0 0;
+  /*border:1px solid green;*/
+  }
+  
+  #box-nl{
+  float:right;
+  width:316px;
+  font:bold 11px Arial;color:#000;  
+  background:url(../img/bg_inscription.gif) repeat-x 0px 0px;
+  margin:0; padding:5px 0 9px 5px;
+  /*border:1px dashed green;*/
+  }
+    #box-nl form{
+    margin:0;padding:0;
+    }
+  
+  
+  #box-forg-pwd{
+  float:right;
+  width:215px;
+  margin:0 12px 0 0;
+  display:none;
+  }
+  
+  .bt-toolz-tetiere a:link,
+  .bt-toolz-tetiere a:visited,
+  .bt-toolz-tetiere a:hover{
+  padding:0px 0 5px 16px;
+  margin:2px 0 0 4px;
+  font:bold 11px Arial;color:#000;text-decoration:none;
+  background:url(../img/fleche_nav.gif) no-repeat 0px 2px;
+  display:block;
+  }
+    #box-identification a:hover{color:#7B7A62;}
+
+
+
+  /***
+  ** Tetiere -> Form identification 
+  */
+  
+  #fieldset{
+  float:right;
+  display:none;
+  margin:0 0px 0 0px;
+  padding:5px 0 5px 5px;
+  background:url(../img/bg_inscription.gif) repeat-x 0px 0px;
+  width:400px;
+  /*border :1px dashed red;*/
+  }
+    
+  form#identification{
+  margin:2px 0 0 0;padding:0px 0 0 0px;
+  font:bold 11px Arial;color:#000;
+  /*border :1px dashed #000;*/
+  }
+  
+  
+  #identification label{/* redefinition des styles pour ces elements communs */
+  margin:0 10px 0px 0;
+  }
+  
+  .label-fleche{
+  padding:0 0 0 16px;
+  background:url(../img/fleche_nav.gif) no-repeat 0px 2px;
+  }
+  
+
+  
+  #identification input{/* redefinition des styles pour ces elements communs */
+  width:90px;
+  font:bold 10px Arial;color:#000;
+  margin:0 10px 0px 0;
+  border:1px solid #000;
+  background:transparent;
+  }
+  
+  #identification .nav-top-submit{
+  width:20px;
+  padding:0 2px;
+  background:#fff;
+  font:bold 11px Arial;color:#000;
+  border:none;
+  } 
+
+
+
+
+  /***
+  ** Tetiere -> Form NL
+  */
+  form#reg_nl{
+  font:bold 11px Arial;color:#000;
+  width:315px;
+  /*border:1px solid #CC00CC;*/
+  }
+  
+  
+  #reg_nl input{/* redefinition des styles pour ces elements communs */
+  width:100px;
+  font:11px Arial;color:#000;
+  margin:0 8px 0px 0;
+  border:1px solid #000;
+  background:transparent;
+  }
+  /* bt submit voir plus haut*/ 
+  
+  #reg_nl .nav-top-submit{
+  width:20px;
+  padding:0 2px;
+  background:#fff;
+  font:bold 11px Arial;color:#000;
+  border:none;
+    /*border:1px solid red;*/
+  } 
+  
+  /****
+   * Loggué ?
+   */
+    #dashboard{
+    float:right;
+    width:auto;
+    font:bold 11px Arial;color:#000;
+    padding:0px 5px 5px 5px;margin:0 0px 0 243px;/* placement a droite*/    
+    background:url(../img/bg_inscription.gif) repeat-x 0px 0px;
+    /*border:1px solid rgb(51,204,204);*/
+    }
+   
+    #msg-bienvenue{
+    margin:8px 0 0 10px;
+    float:left;
+    color:#D30062;
+    }
+    
+  #dashboard a:link,
+  #dashboard a:visited,
+  #dashboard a:hover{
+  float:left;
+  padding:0px 0 0px 16px;
+  margin:8px 0 0 20px;
+  font:bold 11px Arial;color:#000; text-decoration:none;
+  background:url(../img/fleche_nav.gif) no-repeat 0px 2px;
+  display:block;
+  }
+    /*#box-identification a:hover{color:#7B7A62;}*/
+   
+   #bt-tetiere-votreprofil, #bt-tetiere-logout{
+   margin:2px 0 0 15px;
+   }
+   
+        
+  /**
+   * barre couleurs 
+   */
+   hr#logo-barre-couleurs{
+   padding:0;margin:5px 0 0 0;
+   height:8px;
+   background:url(../img/logo_barre_couleurs.gif) no-repeat;
+   border:none;
+   }
+
+
+
+
+
+
+
+
+/***** 
+ *** NAV TOP + panier ()
+ */
+ 
+#box-nav-top{
+  width:975px;
+  padding:0 0 0 3px;
+  /*border:1px solid #ccc;*/
+}
+
+  ul#nav-top{
+  padding:0;margin:0;
+  float:left;
+  list-style:none;
+  /*border:1px solid red;  */
+  }
+    #nav-top li{
+    display:inline;
+    padding:5px 5px 3px 0px;
+    margin:0px 0px 0 5px;
+    border-right:1px solid #000;/**/
+    }
+    
+    #nav-top a:link, #nav-top a:visited, #nav-top a:hover{
+    font:bold 16px Arial;color:#000;text-decoration:none;
+    margin:2px 0 0 0;
+    /*padding:0 2px; margin:0 0 2px 0;*/
+    }
+
+
+
+  /* SEARCH */
+  #box-search{
+  float:right;
+  }
+  
+  form#quickSearch{
+  font:13px Arial;color:#000;
+  }
+  
+
+
+  #fld_qs, #sel-search{
+  width:80px;
+  font:10px Arial;color:#000;
+  border:1px solid #000;
+  background:url(../img/bg_home_pave_bottom.png);
+  }
+    #sel-search option{
+    font:10px Arial;color:#000;
+    background:url(../img/bg_home_pave_bottom.png);
+    }
+    
+    #fld_qs{
+    margin:0 5px 0 0;
+    width:150px;
+    }
+
+  #bt_valid_qs{
+  font:10px Arial;color:#fff;
+  background:#000;
+  padding:0 2px; 
+  border:1px solid #000;
+  }
+
+
+  /***
+   *
+   * Nav top -> Panier (cart, caddie)
+   * cdd203   
+   */
+   
+  #box-dashb-mycredits{
+  width:auto;
+  position:absolute;
+  margin:10px 0 0 414px;
+  padding:0; 
+  /*border:1px dashed red;*/
+  } 
+  
+  #box-dashb-mycredits-bg{
+  background: url(../img/ds_bg_dashb_credit.png) repeat-x 0px 25px;
+  height:31px;
+  float:left;
+  }
+  
+  #box-dashb-mycredits-bgright{
+  float:left;
+  width:2px ;height:31px;
+  background: url(../img/ds_bgright_dashb_credit.png) no-repeat 0px -2px;
+  /*border:1px dashed blue;*/
+  }
+  
+    #box-dashb-mycredits a:link, #box-dashb-mycredits a:visited, #box-dashb-mycredits a:hover{
+    float:left;
+    display:block;
+    font:bold 13px Arial;
+    text-decoration:none;
+    }
+      #box-dashb-mycredits a:hover{
+      color:#D30062;
+      }
+      #box-dashb-mycredits a span{
+      color:#D30062;
+      }
+    
+    #box-dashb-mycredits .cred-mycredits{
+    background:#cbcbc9;
+    color:#000;
+    padding:5px 6px 4px 4px; margin:0 0 0 0px;
+    /*border:1px dashed blue;*/
+    }
+    
+    #box-dashb-mycredits .cred-getMore{
+    background:#000;
+    color:#fff;
+    padding:5px 6px 4px 4px;
+    }
+    
+
+
+    
+  
+          
+  #box-panier{
+  width:360px;
+  position:absolute;
+  margin:10px 0 0 620px;
+  /*border:1px dashed green;*/
+  }
+  
+  #bg-cart-header{
+  background:url(../img/ds_cart_header.png) no-repeat 117px 1px;
+  padding:0 3px 0 0;
+  height:30px;
+  /*border:1px dashed #099;*/
+  }
+  
+    #cont-panier, #cont-sum{float:right;font:bold 12px arial;padding:2px 0 0 0; }
+    #cont-panier{background:#cdd203;color:#000;width:118px;margin:0 0px 0 0px;}
+    #cont-sum{background:#aaa999;color:#fff;width:120px;}
+    
+    #cont-panier p{margin:4px 0 0 0;background:url(../img/ico_cart.png) no-repeat 90px -2px;height:19px; }/*LEFT - TOP*/
+    #cont-panier span {margin:0 5px 4px 0;}
+    
+    #fleche-cart{margin:2px 8px 0px 5px;}
+    
+    #cont-sum p {
+    margin:4px 0 0 0;height:19px;
+    text-align:center;
+    }
+
+
+    #cart-itemz{/* box */
+    display:none;
+    margin:0px 0 0 27px;
+    width:335px;
+    /*border:1px dashed purple;*/
+    }
+
+    
+    #box-cart-itemz-bg{}/* juste un conteiner */
+    
+    #cart-itemz-bg{
+    background:#fff url(../img/ds_cart_items_bg.png) repeat-y;
+    /*border:1px solid green;*/
+    }
+
+    #cart-itemz0{
+    background:#e7ed03;
+    width:330px;
+    margin:0 0 0 4px;
+    border-top:1px solid #DBDBDB;
+    }
+
+  /** Cart v.2 **/
+  table#panier{width:326px;margin:2px auto 0 auto; background:#e0deda;}
+  #panier td{border-bottom:1px dotted #000;border-right:none;text-align:left;padding:0 0 0 2px;}/*vertical-align:top;*/
+  #panier .c-title{width:202px;}
+  #panier .c-type{width:48px;text-align:center;font:bold 12px Arial;color:#505050;}
+  #panier .c-price{width:48px;}
+  #panier .c-suppr{width:20px;}
+
+    .cart-ico-suppr{
+    background:url(../img/ico_trash_noir.png) no-repeat 2px 2px;
+    cursor:pointer;
+    border:none;
+    }
+    
+    a.cart-checkout-lien:link, a.cart-checkout-lien:visited, a.cart-checkout-lien:hover{
+    /*background:#aaa999 url(../img/fleche_nav.gif) no-repeat 2px 5px;*/
+    background:#e0deda;
+    text-align:center;font:bold 14px Arial;color:#D30062;text-transform:uppercase;
+    text-decoration:none;
+    padding:4px 0;margin:0 0 0 2px;
+    display:block;
+    width:326px;
+    /*padding:0 2px; margin:0 0 2px 0;*/
+    }
+
+  #cart-shim{
+  height:3px;
+  }
+    
+  #cart-ds-bottom{
+  margin:0;
+  background:url(../img/ds_cart_items_bott.png) no-repeat;
+  height:4px;
+  /*border:1px solid #000;*/
+  }
+
+  /* Old carts - anciens paniers - items mis de coté */
+  #box-olcart .add-in-cart{
+  background:url(../img/ico_famfam/add.png) no-repeat 0 0px;
+  border:none;
+  }
+  
+    #cont-sum-olcart{background:#fff;color:#000;width:118px;margin:0 0px 0 0px;}
+    
+    #cart-item-nb-olcart{}
+    #jax-cart-item-pluriel-olcart{}
+    #cart-total-olcart{}
+
+
+  /* textarea -> poignée d'étirement */
+  .slider{
+  /*float:left;*/
+  height:7px;
+  background:transparent url(../img/ico_poignee_etirement.png) no-repeat right top;
+  cursor:se-resize;
+  /*border-right:1px solid #999;border-bottom:1px solid #999;border-left:1px solid #999;*/
+  border:1px solid #999;
+  }
+
+
+
+/***** 
+ *** NAV GAUCHE
+ * 160608-184716 $$ voir "treeview.css" $$  
+ */
+
+
+  /** Liste alfa (genre et continent) **/
+  #alfabeta{
+  padding:0;margin:20px auto 0px auto;  
+  list-style:none;
+  width:485px;
+  /*border:1px solid #DDDDDD;*/
+  }
+
+    #alfabeta li.off, #alfabeta li.on{
+      margin:0px 0 0 5px;
+      background:url(../img/bg_photo_alaune.png) no-repeat;
+      display:inline; font-size:13px;
+      cursor:pointer;
+      border:1px solid #DDDDDD;
+    }
+
+      #alfabeta li.on{
+        background:red;color:#fff;
+      }
+
+
+  /***** 
+  * RADIO
+  */
+  #box-radio{
+  width:225px;
+  margin:20px 0 0;
+  }
+    #box-radio h4{
+    background:url(../img/bg_blocks_neso.png) no-repeat;
+    font:13px Arial;color:#fff; line-height:20px;
+    margin:0;padding:0px 0 0 20px;
+    height:20px;
+    }
+    
+    #radiomix_fla{
+    margin:10px 0 0 0;
+    }
+
+
+/***** 
+ *** FOOTER
+ * 190608-215610 
+ *  #box-footer{} --> voir plus haut
+ */
+
+ 
+ #box-footer a:link, #box-footer a:visited, #box-footer a:hover{
+ font:bold 10px Verdana; color:#000; text-decoration:none;
+ }
+ 
+ #box-footer ul{
+ padding:0px 0 0 0;
+ margin:0 auto;
+ /*width:860px;*/
+ list-style:none;
+ /*border:1px solid red;*/
+ }
+ 
+
+  #box-footer ul li{
+  float:left;
+  border-right:1px solid #000;
+  margin:4px 0 0 5px;
+  padding:0px 10px 0 0;
+  /*border:1px solid blue;*/
+  }
+  
+
+ #box-footer ul .footer-copyright, #box-footer ul .footer-copyright a:link, #box-footer ul .footer-copyright a:visited, #box-footer ul .footer-copyright a:hover{
+ font:bold 9px Verdana; color:#000; text-decoration:none;
+ }
+ 
+ #box-footer ul .footer-copyright {
+ padding:0; margin:0px 0 0 5px;
+ font-weight:normal; 
+ border:none;
+ } 
+ 
+ #box-footer ul .footer-copyright p{
+ margin:0; padding:0 0 0 5px;
+  width:230px;
+ border-bottom:1px solid #000;
+ }
+ 
+ #box-footer ul .footer-copyright p.last{
+ border-bottom:none;
+ }
+
+
+ 
+  /**
+  * Cart permanent - flottant
+  */
+  #float-cart{
+  z-index:10;
+  background:#CDD203;/*url(../img/bg_photo_alaune.png);  */
+  bottom:0;right:4px;
+  position:fixed;
+  width:210px; height:40px;
+  font:10px Verdana;color:white;
+  display:none; opacity:0.8;
+  border:1px solid #444;
+  }
+  
+    #float-cart .pastille{/*--depre*/
+    /*float:left;*/
+    background:#CDD203 url(../img/bg_pastille_blanc.png) no-repeat 1px 1px;
+    margin:10px 0 0 1px;padding:2px 0 0 6px;
+    width:20px; height:21px;
+    font:bold 14px Verdana; color:#000;
+    /*border:1px solid #000;*/
+    }
+    
+    #float-cart .fc-cko{
+    /*float:left;*/
+    /*background:#FFB32F;*/
+
+    /*border:1px solid #000;*/
+    }
+    
+      #float-cart a:link, #float-cart a:visited, #float-cart a:hover{
+      background:#CDD203 url(../img/ico_cart.png) no-repeat 3px 4px;/* */
+      margin:10px 0 0 0px;padding:4px 0 4px 35px;
+      font:bold 12px Arial; color:#000; text-decoration:none;
+      /*text-align:center;*/
+      width:165px;
+      display:block;
+      }
+  
+
+    a.bt-lien-fleche:link,
+    a.bt-lien-fleche:visited,
+    a.bt-lien-fleche:hover{
+    padding:0px 0 0px 19px;
+    margin:15px 0 0 0px;
+    font:bold 11px Arial;color:#000;text-decoration:underline;
+    background:url(../img/fleche_nav.gif) no-repeat 0px 2px;
+    
+    }
+
+#dashboard a.top_credits{
+	color: #000000;
+	font-weight: bolder;
+	background-color: #CDD203;
+	background-image: none;
+	margin-top: 8px;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 5px;
+	padding-top: 0px;
+	padding-right: 0;
+	padding-bottom: 0px;
+	padding-left: 2px;
+}

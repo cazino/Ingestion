@@ -1,0 +1,193 @@
+{% extends "base.html" %}
+
+  {% block main %}
+  <div id="block1">
+  
+  <div id="block1-col-left">
+  
+  {% block top-middle %}
+  <div id="box-slideshow">
+
+      <div id="bg-slideshow">
+      <div id="highlight">
+
+
+      </div>
+  <!---->      
+      <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="538" height="277" id="highlight" align="middle">
+      <param name="allowScriptAccess" value="sameDomain" />
+      <param name="movie" value="highlight.swf?{{LOCATION_STRING}}={{LOCATION_CODE}}&INP_LNG={{LANGUAGE_CODE}}&SECTION=1" />
+      <param name="quality" value="high" />
+      <param name="bgcolor" value="#ffffff" />
+      <embed src="media/swf/highlight.swf?{{LOCATION_STRING}}={{LOCATION_CODE}}&INP_LNG={{LANGUAGE_CODE}}&SECTION=1" wmode="transparent" quality="high" bgcolor="#ffffff" width="538" height="277" id="highlight" name="highlight" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+      </object>
+
+      
+    
+    </div id="bg-slideshow">
+ 
+  </div id="box-slideshow">
+
+    {% endblock %}
+
+    <div id="box-caroussel">
+    
+      <h3>{{newreleases}}</h3>
+     <!--      -->
+      <div id="carousel">
+        <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" name="carosello" width="573" height="170" align="middle" id="carosello">
+        <param name="allowScriptAccess" value="sameDomain" />
+        <param name="movie" value="media/swf/carosello.swf?{{LOCATION_STRING}}={{LOCATION_CODE}}&INP_LNG={{LANGUAGE_CODE}}&SECTION=1/><param name="quality" value="high" /><param name="bgcolor" value="#ffffff" />
+        <embed src="media/swf/carosello.swf?{{LOCATION_STRING}}={{LOCATION_CODE}}&INP_LNG={{LANGUAGE_CODE}}&SECTION=1" quality="high" bgcolor="#ffffff" width="573" height="170" name="carosello" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+        </object>
+      </div id="carousel">
+
+    </div id="box-caroussel">
+    
+    {% block down-middle %}
+    {% endblock %}
+    
+   
+
+    <br class="clear" />
+
+
+  </div id="block1-col-left">
+  
+  
+  <div id="block1-col-right">
+  
+        <div id="box-credit">
+
+    <a href="./credits.php"><img src="media/img/credit_forfait_eur_fr-fr.jpg" border="0" /></a>
+    </div>    
+  
+        <div id="box-radio">
+    <h4>Radio Mix</h4>
+    
+    <object id="radiomix_fla" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="225" height="104">
+      <param name="movie" value="media/swf/miniradio.swf" />
+      <param name="quality" value="high" />
+      <embed id="radiomix_fla" src="media/swf/miniradio.swf" quality="high"  wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="225" height="104"></embed>
+    </object>
+
+    </div id="box-radio">
+    
+    
+        <div id="box-meilleures-ventes">
+    <h3> Meilleures ventes</h3>
+
+            <div id="box-mv-titres">
+        <h4>Titres</h4>
+        <!--<a href="#">tous les titres</a>-->
+   
+        <ol>
+
+                <li id="tc_tra-54090">
+        <p class="titre" onClick="context_menu('54090','1','tc_tra');" title="Di Alma">
+        Di Alma</p>
+        <span><a href="./sara_tavares">Sara Tavares</a></span>
+        </li>
+                <li id="tc_tra-41558">
+        <p class="titre" onClick="context_menu('41558','1','tc_tra');" title="Africa">
+        Africa</p>
+
+        <span><a href="./blick-bassy">Blick Bassy</a></span>
+        </li>
+                <li id="tc_tra-39374">
+        <p class="titre" onClick="context_menu('39374','1','tc_tra');" title="Tu ne Kaha">
+        Tu ne Kaha</p>
+        <span><a href="./najma-akhtar">Najma Akhtar</a></span>
+        </li>
+
+                <li id="tc_tra-51587">
+        <p class="titre" onClick="context_menu('51587','1','tc_tra');" title="Rueda">
+        Rueda</p>
+        <span><a href="./almasala">Almasäla</a></span>
+        </li>
+                <li id="tc_tra-85783">
+        <p class="titre" onClick="context_menu('85783','1','tc_tra');" title="Wallflower Blues">
+        Wallflower Blues</p>
+
+        <span><a href="./somi">Somi</a></span>
+        </li>
+                <li id="tc_tra-37227">
+        <p class="titre" onClick="context_menu('37227','1','tc_tra');" title="Yaad tumhari">
+        Yaad tumhari</p>
+        <span><a href="./smoke">Smoke</a></span>
+        </li>
+
+                <li id="tc_tra-61607">
+        <p class="titre" onClick="context_menu('61607','1','tc_tra');" title="Mary">
+        Mary</p>
+        <span><a href="./mamou_sidibe">Mamou Sidibe</a></span>
+        </li>
+                <li id="tc_tra-39162">
+        <p class="titre" onClick="context_menu('39162','1','tc_tra');" title="Somogyindia">
+        Somogyindia</p>
+
+        <span><a href="./bognar-szilvia-herczku-agnes-szaloki-agi">Bognár Szilvia, Herczku Ágnes & Szalóki Ági</a></span>
+        </li>
+                <li id="tc_tra-85120">
+        <p class="titre" onClick="context_menu('85120','1','tc_tra');" title="Coopération (feat. Sam Mangwana)">
+        Coopération (feat. Sam Mangwana)</p>
+        <span><a href="./franco">Franco</a></span>
+        </li>
+
+                <li id="tc_tra-81601">
+        <p class="titre" onClick="context_menu('81601','1','tc_tra');" title="Canção do Sal">
+        Canção do Sal</p>
+        <span><a href="./milton_nascimento">Milton Nascimento</a></span>
+        </li>
+                </ol>  
+      </div id="box-mv-titres">
+      
+
+            <div id="box-mv-albums">
+
+      
+        <h4>Albums</h4>
+        <!--<a href="#">tous les albums</a>-->
+        <ol>
+                <li id="tc_alb-27725">
+        <p class="titre" onClick="context_menu('27725','2','tc_alb');" title="Songhai Blues - Homage To Ali Farka Touré">Songhai Blues - Homage To Ali...</p>
+        <span><a href="./samba-toure">Samba Toure</a></span>
+        </li>
+
+                <li id="tc_alb-25332">
+        <p class="titre" onClick="context_menu('25332','2','tc_alb');" title="Xinti">Xinti</p>
+        <span><a href="./sara_tavares">Sara Tavares</a></span>
+        </li>
+                <li id="tc_alb-24169">
+        <p class="titre" onClick="context_menu('24169','2','tc_alb');" title="Séno">Séno</p>
+        <span><a href="./ba_cissoko">Ba Cissoko</a></span>
+
+        </li>
+                <li id="tc_alb-27994">
+        <p class="titre" onClick="context_menu('27994','2','tc_alb');" title="Chamber Music (with Vincent Ségal)">Chamber Music (with Vincent...</p>
+        <span><a href="./ballake_sissoko">Ballaké Sissoko</a></span>
+        </li>
+                </ol>    
+      
+      </div id="box-mv-albums">
+  
+    </div id="box-meilleures-ventes">    
+    
+    
+    
+  </div id="block1-col-right">
+
+  <br class="clear" />
+  
+  </div id="block1">
+
+    
+  <div id="block2"> </div id="block2">
+  
+  {% block blabla %} {% endblock %}
+  
+
+{% endblock %} 
+
+
+

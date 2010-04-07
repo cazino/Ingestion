@@ -1,0 +1,8 @@
+*localsettings*
+*~
+*.pyc
+/media/swf*
+/media/publish*
+apache*
+ingestion/tests/data*
+

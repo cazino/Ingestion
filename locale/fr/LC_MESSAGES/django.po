@@ -1,0 +1,182 @@
+# -*- coding: utf-8 -*-
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-12-14 09:27-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main/context_processors.py:14
+msgid "Africa"
+msgstr "Afrique"
+
+#: main/context_processors.py:14
+msgid "continent_africa_10.htm"
+msgstr "continent_afrique_10.htm"
+
+#: main/context_processors.py:15
+msgid "Americas"
+msgstr "Amériques"
+
+#: main/context_processors.py:15
+msgid "continent_americas_50|60.htm"
+msgstr "continent_ameriques_50|60.htm"
+
+#: main/context_processors.py:16
+msgid "Asia-Oceania"
+msgstr "Asie-Océanie"
+
+#: main/context_processors.py:16
+msgid "continent_asia_20|40|70.htm"
+msgstr "continent_asie_20|40|70.htm"
+
+#: main/context_processors.py:17
+msgid "Europe"
+msgstr "Europe"
+
+#: main/context_processors.py:17
+msgid "continent_europe_30.htm"
+msgstr "continent_europe_30.htm"
+
+#: main/context_processors.py:20
+#, fuzzy
+msgid "Afro"
+msgstr "Afro"
+
+#: main/context_processors.py:20
+#, fuzzy
+msgid "genre_afro_1.htm"
+msgstr "genre_afro_1.htm"
+
+#: main/context_processors.py:21
+msgid "Creole"
+msgstr "Créole"
+
+#: main/context_processors.py:26
+msgid "Gypsy"
+msgstr "Tzigane"
+
+#: main/context_processors.py:26
+msgid "genre_gypsy_7.htm"
+msgstr "genre_tzigane_7.htm"
+
+#: main/context_processors.py:27
+msgid "Songs"
+msgstr "Chansons"
+
+#: main/context_processors.py:27
+msgid "genre_songs_8.htm"
+msgstr "genre_chansons_8.htm"
+
+#: main/context_processors.py:28
+msgid "Traditionnal . Folk"
+msgstr "Traditionnel . Folk"
+
+#: main/context_processors.py:28
+msgid "genre_traditionnal--folk_9.htm"
+msgstr "genre_traditionnel--folk_9.htm"
+
+#: main/context_processors.py:30
+msgid "Classical . Contemporary"
+msgstr "Classique . Contemporain"
+
+#: main/context_processors.py:30
+msgid "genre_classical--contemporary_17.htm"
+msgstr "genre_classique--contemporain_17.htm"
+
+#: main/context_processors.py:32
+msgid "Sacred"
+msgstr "Sacré"
+
+#: main/context_processors.py:32
+msgid "genre_sacred_12.htm"
+msgstr "genre_sacre_12.htm"
+
+#: main/context_processors.py:33
+msgid "HipHop . Electro . Spoken"
+msgstr "HipHop . Electro . Slam"
+
+#: main/context_processors.py:33
+msgid "genre_hiphop--electro-spoken-words_13.htm"
+msgstr "genre_hiphop--electro-slam--groove--soul_13.htm"
+
+#: main/context_processors.py:36
+msgid "Soundtracks . Poetry"
+msgstr "Cinéma . Poésie"
+
+#: main/context_processors.py:36
+msgid "genre_soundtracks--poetry_16.htm"
+msgstr "genre_cinema--poesie_16.htm"
+
+#: main/context_processors.py:42
+msgid "mondomix magazine"
+msgstr "le magazine Mondomix"
+
+#: main/context_processors.py:43
+msgid "help"
+msgstr "aide"
+
+#: main/context_processors.py:45
+msgid "the mondomix mp3 experience"
+msgstr "l'expérience mondomix en mp3"
+
+#: main/context_processors.py:46
+msgid "DRM free - compatible with all digital players"
+msgstr "Sans DRM, compatible avec tous les baladeurs numériques"
+
+#: main/context_processors.py:47
+msgid "explore"
+msgstr "explorer"
+
+#: main/context_processors.py:48
+msgid "genres"
+msgstr "genres"
+
+#: main/context_processors.py:49
+msgid "my cart"
+msgstr "mon panier"
+
+#: main/context_processors.py:50
+msgid "register"
+msgstr "inscrivez-vous"
+
+#: main/context_processors.py:51
+msgid "my account"
+msgstr "mon compte"
+
+#: main/context_processors.py:52
+msgid "subscribe to the newsletter"
+msgstr "inscription à la newsletter"
+
+#: main/context_processors.py:53
+msgid "download"
+msgstr "télécharger"
+
+#: main/helpers.py:36
+msgid "various countries"
+msgstr "plusieurs pays"
+
+#: main/views/homepage.py:15
+msgid "Highlight"
+msgstr "A la une"
+
+#: main/views/homepage.py:16
+msgid "Our Picks"
+msgstr "Coup de coeur"
+
+#~ msgid "genre_creole_2.htm"
+#~ msgstr "genre_creole_2.htm"
+
+#~ msgid "Reggae"
+#~ msgstr "Reggae"
