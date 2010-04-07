@@ -14,7 +14,7 @@ ALTER TABLE `audio_file` ENGINE = INNODB;
 ALTER TABLE `disk` ENGINE = INNODB;
 ALTER TABLE `prix` ENGINE = INNODB;
 
-BEGIN;
+
 
 CREATE TABLE `artist_vendor` (
     `artist_vendor` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -97,7 +97,7 @@ SET ac_country_id=NULL
 WHERE ac_country_id 
 NOT IN ( SELECT country FROM country);
 
-ALTER TABLE  `track` CHANGE  `tra_album_id`  `tra_album_id` INT( 11 ) NULL DEFAULT NULL
+ALTER TABLE  `track` CHANGE  `tra_album_id`  `tra_album_id` INT( 11 ) NULL DEFAULT NULL;
 UPDATE `track` 
 SET tra_album_id=NULL
 WHERE tra_album_id 
@@ -148,9 +148,9 @@ ALTER TABLE `carrousels` ADD CONSTRAINT carousel_album_fk6 FOREIGN KEY (car_albu
 ALTER TABLE `carrousels` ADD CONSTRAINT carousel_album_fk7 FOREIGN KEY (car_album7) REFERENCES album(album);
 ALTER TABLE `carrousels` ADD CONSTRAINT carousel_album_fk8 FOREIGN KEY (car_album8) REFERENCES album(album);
 ALTER TABLE `carrousels` ADD CONSTRAINT carousel_album_fk9 FOREIGN KEY (car_album9) REFERENCES album(album);
-ALTER TABLE `coups_de_coeur` ADD CONSTRAINT actu_disqu_fk1 FOREIGN KEY (cdc_album1) REFERENCES album(album);
+/*ALTER TABLE `coups_de_coeur` ADD CONSTRAINT actu_disqu_fk1 FOREIGN KEY (cdc_album1) REFERENCES album(album);
 ALTER TABLE `coups_de_coeur` ADD CONSTRAINT actu_disqu_fk2 FOREIGN KEY (cdc_album2) REFERENCES album(album);
-ALTER TABLE `coups_de_coeur` ADD CONSTRAINT actu_disqu_fk3 FOREIGN KEY (cdc_album3) REFERENCES album(album);
+ALTER TABLE `coups_de_coeur` ADD CONSTRAINT actu_disqu_fk3 FOREIGN KEY (cdc_album3) REFERENCES album(album);*/
 ALTER TABLE `label_vendor` ADD CONSTRAINT `lv_label_fk` FOREIGN KEY (`label_id`) REFERENCES `label` (`label`);
 ALTER TABLE `label_vendor` ADD CONSTRAINT `lv_vendor_fk` FOREIGN KEY (`vendor_id`) REFERENCES `vendor` (`vendor`);
 ALTER TABLE `image_file` ADD CONSTRAINT `image_disk_fk` FOREIGN KEY (`ima_disk_id`) REFERENCES `disk` (`disk`);
@@ -201,11 +201,3 @@ CREATE INDEX `image_file_ima_album_id` ON `image_file` (`ima_album_id`);
 CREATE INDEX `image_file_ima_artist_id` ON `image_file` (`ima_artist_id`);
 CREATE INDEX `track_tr_prix` ON `track` (`tr_prix`);
 CREATE INDEX `track_tra_album_id` ON `track` (`tra_album_id`);
-COMMIT;
-
-
-
-
-
-
-
