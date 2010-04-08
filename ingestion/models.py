@@ -43,6 +43,7 @@ class DeliveryRelease(DeliveryData):
         super(DeliveryRelease, self).__init__(**kwargs)
         if 'territories' in kwargs and not isinstance(kwargs['territories'], tuple):
             raise TypeError
+
     
 class DeliveryArtist(DeliveryData):
     
@@ -51,6 +52,14 @@ class DeliveryArtist(DeliveryData):
     def __init__(self, **kwargs):
         super(DeliveryArtist, self).__init__(**kwargs)
 
+    def __hash__(self):
+        hasher = hashlib.md5()
+        hashable_values = [value for key, value in self.__dict__.items() 
+                           if not (isinstance(self.__dict__[key], DeliveryLabel) or
+                                   isinstance(self.__dict__[key], DeliveryRelease))]
+        for value in hashable_values:
+            hasher.update(repr(value))
+        return int(hasher.hexdigest(), 16)
 
 class DeliveryLabel(DeliveryData):
     
@@ -58,6 +67,15 @@ class DeliveryLabel(DeliveryData):
     
     def __init__(self, **kwargs):
         super(DeliveryLabel, self).__init__(**kwargs)         
+
+    def __hash__(self):
+        hasher = hashlib.md5()
+        hashable_values = [value for key, value in self.__dict__.items() 
+                           if not (isinstance(self.__dict__[key], DeliveryArtist) or
+                                   isinstance(self.__dict__[key], DeliveryRelease))]
+        for value in hashable_values:
+            hasher.update(repr(value))
+        return int(hasher.hexdigest(), 16)
 
 
 class DeliveryStyle(DeliveryData):

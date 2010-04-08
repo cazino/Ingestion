@@ -55,6 +55,67 @@ class TestDeliveryArtist(TestCase):
         release.artist = artist
         self.assert_(artist == artist)
 
+    def test_equality_with_different_releases(self):
+        artist1 = DeliveryArtist(pk=1, name='aa')
+        artist2 = DeliveryArtist(pk=1, name='aa')
+        release1 = DeliveryRelease(pk=1, title='release1')
+        release2 = DeliveryRelease(pk=1, title='release2')
+        artist1.release = release1
+        artist2.release = release2
+        release1.artist = artist1
+        release2.artist = artist2
+        self.assertEqual(artist1, artist2)
+
+    def test_hash_equality_with_different_releases(self):
+        artist1 = DeliveryArtist(pk=1, name='aa')
+        artist2 = DeliveryArtist(pk=1, name='aa')
+        release1 = DeliveryRelease(pk=1, title='release1')
+        release2 = DeliveryRelease(pk=1, title='release2')
+        artist1.release = release1
+        artist2.release = release2
+        release1.artist = artist1
+        release2.artist = artist2
+        self.assertEqual(hash(artist1), hash(artist2))
+
+
+class TestDeliveryLabel(TestCase):
+
+    def test_exception(self):
+        self.assertRaises(TypeError, DeliveryLabel, prout=3)
+        
+    def test_equality(self):
+        label1 = DeliveryLabel(name='aaa')
+        label2 = DeliveryLabel(name='aaa')
+        self.assertEqual(label1, label2)
+        
+    def test_hash_equality(self):
+        label1 = DeliveryLabel(name='aaa')
+        label2 = DeliveryLabel(name='aaa')
+        self.assertEqual(hash(label1), hash(label2))
+
+    def test_equality_with_different_releases(self):
+        label1 = DeliveryLabel(name='aaa')
+        label2 = DeliveryLabel(name='aaa')
+        release1 = DeliveryRelease(pk=1, title='release1')
+        release2 = DeliveryRelease(pk=1, title='release2')
+        label1.release = release1
+        label2.release = release2
+        release1.label = label1
+        release2.label = label2
+        self.assertEqual(label1, label2)
+        
+    def test_hash_equality_with_different_releases(self):
+        label1 = DeliveryLabel(name='aaa')
+        label2 = DeliveryLabel(name='aaa')
+        release1 = DeliveryRelease(pk=1, title='release1')
+        release2 = DeliveryRelease(pk=1, title='release2')
+        label1.release = release1
+        label2.release = release2
+        release1.label = label1
+        release2.label = label2
+        self.assertEqual(hash(label1), hash(label2))
+
+
         
 class TestDeliveryStyle(TestCase):
 
@@ -122,17 +183,6 @@ class TestDeliveryImage(TestCase):
         image2 = DeliveryImage(format='extrait')
         self.assertEqual(image1, image2)
 
-
-class TestDeliveryLabel(TestCase):
-
-    def test_exception(self):
-        self.assertRaises(TypeError, DeliveryLabel, prout=3)
-        
-    def test_equality(self):
-        label1 = DeliveryLabel(name='aaa')
-        label2 = DeliveryLabel(name='aaa')
-        self.assertEqual(label1, label2)
-        
 
 class TestIDOLDeliveryBatch1(TestCase):
         
@@ -415,6 +465,29 @@ class TestTwoDeliveryBatch(AbstractBatchTest):
         self.assertEqual(None, self.batch.get_release(pk=91))   
 
 
+class TestBatchWithSimilarData(AbstractBatchTest):
+
+    directory = TEST_COMMON + '/batch_similar'
+    
+    def setUp(self):
+        super(TestBatchWithSimilarData, self).setUp()
+        self.delivery1 = IDOLDelivery(self.directory + '/3307516706028')
+        self.delivery2 = IDOLDelivery(self.directory + '/3700409866128')
+    
+    def test_artists(self):
+        self.assertEqual(set([self.delivery1.artist]), self.batch.artists())
+    
+    def test_unknown_artists(self):
+        self.assertEquals(set([self.delivery1.artist]), self.batch.unknown_artists())
+
+    def test_labels(self):
+        self.assertEqual(set([self.delivery1.label]), self.batch.labels())
+    
+    def test_unknown_labels(self):
+        self.assertEquals(set([self.delivery1.label]), self.batch.unknown_labels())
+    
+    
+
 class TestBatchDelete(AbstractBatchTest):
     """
     Test that the bath detects if ther is a 'update' or 'delete' flag
@@ -492,6 +565,8 @@ class TestCompil1DeliveryBatch(TestCase):
         produced_track = self.delivery.tracks[0]
         produced_track.audio_files = None
         self.assertEqual(expected_track, produced_track)
+
+
 
 
 """
