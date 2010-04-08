@@ -97,29 +97,38 @@ class AbstractManager(models.Manager):
     """
     Abstract BaseClass for ArtistManager and LabelManager
     """
-    def _build_or_condition(self, entity_name):
-        entity_words = entity_name.split(' ')
-        length = len(entity_words)
-        q_string = ''
-        for i in range(length):
-            q_string = q_string + " models.Q(name__icontains=entity_words[%s]) " %(i)
-            if i < (length - 1):
-                q_string = q_string + "|"    
-        return eval(q_string)
+    def _build_filter(self, searched_text, search_fields):
+        """
+        Returns a 'OR' filter of case insensitive search of every word of the searched_text
+        against every search_fields
+        """
+        searched_words = searched_text.split(' ')
+        search_tuples = []
+        for searched_word in searched_words:
+            for search_field in search_fields:
+                search_tuples.append((search_field, searched_word))
+
+        last_index = len(search_tuples) - 1
+        filter = ''
+        for index, (search_field, searched_word) in enumerate(search_tuples):
+            filter = filter + "models.Q(%s__icontains='%s')" % (search_field, searched_word)
+            if index < last_index:
+                filter = filter + " | "
+        return eval(filter)
 
 
 class LabelManager(AbstractManager):
     
     def similar_name(self, label_name):
-        or_condition = self._build_or_condition(label_name)
-        return self.filter(or_condition)
+        filter = self._build_filter(label_name, ('name',))
+        return self.filter(filter)
 
               
 class ArtistManager(AbstractManager):
 
     def similar_name(self, artist_name):
-        or_condition = self._build_or_condition(artist_name)
-        return self.filter(or_condition)
+        filter = self._build_filter(artist_name, ('name', 'alias'))
+        return self.filter(filter)
 
     def similar_url(self, url):
         return self.filter(url__icontains=url)
@@ -161,7 +170,7 @@ class Artist(models.Model):
     art_calabashgenres = models.CharField(null=True, max_length=255, db_column='art_calabashGenres', blank=True) # Field name made lowercase.
     art_calabashsituation = models.TextField(null=True, db_column='art_calabashSituation', blank=True) # Field name made lowercase.
     art_calabashgenre = models.TextField(null=True, db_column='art_calabashGenre', blank=True) # Field name made lowercase.
-    art_alias = models.TextField(null=True, blank=True)
+    alias = models.TextField(null=True, blank=True, db_column='art_alias')
     art_url_rewriting2 = models.CharField(null=True, max_length=255, blank=True)
     art_ioda_id = models.IntegerField(null=True, blank=True)
     art_calimp_url_calabash = models.CharField(default='', max_length=255)

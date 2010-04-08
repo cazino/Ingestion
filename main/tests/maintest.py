@@ -6,7 +6,7 @@ Replace these with more appropriate tests for your application.
 """
 
 from datetime import datetime
-import sqlparse
+import pdb
 from django.db import models
 from django.test import TestCase
 from django.test.client import Client
@@ -72,13 +72,13 @@ class BestAlbumSellCalculatorTest(TestCase):
         album = Album.objects.create()
         self.assertEqual(album, self.calculator.calculate().get())
         
-"""        
+
     
 def print_sql(qs):
     q = qs.query.as_sql()
     statement = q[0] % q[1]
     print sqlparse.format(statement, reindent=True, keyword_case='upper')    
-
+"""
 class ArtistManagerGetByPk(TestCase):
 
     def test_postive(self):
@@ -94,6 +94,7 @@ class ArtistManagerGetByPk(TestCase):
         artist = Artist.objects.create(name='artist_name')
 	self.assertRaises(Artist.DoesNotExist, Artist.objects.get_by_pk, pk=pk, vendor=vendor)
 
+
 class ArtistManagerSimilarName(TestCase):
         
     def test_easy_positive(self):
@@ -102,14 +103,18 @@ class ArtistManagerSimilarName(TestCase):
 
     def test_easy_negative(self):
         artist = Artist.objects.create(name='les machins')
-        self.assertFalse(artist in Artist.objects.similar_name('prout'))
-	
+        self.assertFalse(artist in Artist.objects.similar_name('prout'))	
 
     def test_positive(self):
         artist = Artist.objects.create(name='4 Etoiles - Les Quatre Etoiles')
         query_set = Artist.objects.similar_name('Quatre Prout')
         self.assertTrue(artist in query_set)
-	
+    
+    def test_positive_with_alias(self):
+	artist = Artist.objects.create(name='artist_name', alias='gerard lambert')
+        query_set = Artist.objects.similar_name('gerard')
+        self.assertTrue(artist in query_set)
+
 class LabelManagerSimilarName(TestCase):
 
     def test_easy_positive(self):
