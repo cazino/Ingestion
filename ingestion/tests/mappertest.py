@@ -3,6 +3,7 @@ from datetime import date
 from django.test import TestCase
 from django.db.models import ObjectDoesNotExist
 from mp3.main.models import Artist, Vendor, ArtistVendor, Label, Track, TrackVendor, Album, AudioFile, Disc, Prix
+from mp3.main.models import CountryIsoEn
 from mp3.ingestion.models import IDOLDelivery, DeliveryTrack
 from mp3.ingestion.mappers import ArtistMapper, LabelMapper, ReleaseMapper, AudioFileMapper, TrackMapper
 from mp3.ingestion.mappers import ImageFileMapper
@@ -124,17 +125,29 @@ class ReleaseMapperTest(TestCase):
         self._check_notes(produced_album)
         album_vendor = produced_album.albumvendor_set.get(vendor=self.vendor)
         self.assertEqual(self.delivery.release.pk, album_vendor.external_album_id)
-        """
-        for track in self.delivery.tracks:
-            local_track = Track.objects.get(album=produced_album,
-                                            disc_number=track.disc_number,
-                                            track_number=track.track_number)
-            self.assertEqual(track.title, local_track.title)
-            self.assertEqual(track.isrc, local_track.isrc)
-            local_trackvendor = TrackVendor.objects.get(track=local_track)
-            self.assertEqual(local_trackvendor.external_track_id, track.pk)
-            # Audio files ??AudioFileMapper
-        """
+        
+
+class ReleaseWithWorldWideTerritoryMapperTest(TestCase):
+
+    fixtures = ['iso.json',]
+
+    def setUp(self):
+        self.delivery = IDOLDelivery(TEST_COMMON + '/batch_similar/3307516706028')
+        self.vendor = Vendor.objects.create(pk=self.delivery.vendor_id)
+        self.label = Label.objects.create(name='aaaa')
+        self.artist = Artist.objects.create(name='aaaa')
+        self.prix = Prix.objects.create(code=price_dic['B0'])
+        self.release_mapper = ReleaseMapper(self.delivery, artist=self.artist, label=self.label, vendor=self.vendor)
+
+    def _build_expected_territories(self):
+        country_codes = CountryIsoEn.objects.all().values_list('code')
+        return set([code for (code,) in country_codes])
+
+    def test_create(self):
+        produced_album = self.release_mapper.create()
+        self.assertEqual(self._build_expected_territories(), set(produced_album.territories.split(',')))
+        
+        
 
 class TrackMapperTest(TestCase):
 

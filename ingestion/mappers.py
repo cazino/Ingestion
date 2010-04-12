@@ -3,7 +3,7 @@
 from datetime import date
 from mp3.main.models import Artist, Vendor, ArtistVendor, Label, LabelVendor, Album
 from mp3.main.models import  AlbumVendor, Track, TrackVendor, AudioFile, Disc
-from mp3.main.models import ImageFile, Prix
+from mp3.main.models import ImageFile, Prix, CountryIsoEn
 from mp3.ingestion.metadata.idol_prices import price_dic
 from mp3.ingestion.utils import latin1_to_ascii
 
@@ -81,11 +81,22 @@ class ReleaseMapper(Mapper):
     def _build_notes(self):
         notes = (',').join([style.name for style in self.delivery.styles])
         return notes + " - IDOL-ID: %s" % (str(self.delivery.release.pk))
+    
+    def _build_territories(self):
+        """
+        Construct the list all territoires
+        Transform WW -> all territories avalaible
+        """
+        delivery_territories = set(self.delivery.release.territories)
+        if ('WW' in delivery_territories or 'ww' in delivery_territories):
+            return [code for (code, ) in CountryIsoEn.objects.all().values_list('code')]
+        else:
+            return self.delivery.release.territories
 
     def create(self):
         prix = Prix.objects.get(code=price_dic[self.delivery.release.price])
         album = Album.objects.create(title=self.delivery.release.title, 
-                                     territories=','.join(self.delivery.release.territories),
+                                     territories=','.join(self._build_territories()),
                                      artist=self.artist, label=self.label, 
                                      publish_date=self.delivery.release.publish_date,
                                      publish_date_digital=self.delivery.release.publish_date_digital,

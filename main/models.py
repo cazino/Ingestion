@@ -757,14 +757,14 @@ class CountryIp(models.Model):
         db_table = u'country_ip'
 
 
-"""
+
 class CountryIsoEn(models.Model):
     id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=255)
     code = models.CharField(max_length=6)
     class Meta:
         db_table = u'country_iso_en'
-"""
+
 
 
 class Credits(models.Model):
