@@ -10,6 +10,7 @@
 # into your database.
 import re, os, pdb
 from django.db import models
+from django.db.models.query import QuerySet
 from mp3.main import main_localsettings
 
 class WithPath(models.Model):
@@ -71,11 +72,12 @@ class Prix(models.Model):
     pri_condition = models.CharField(max_length=255, blank=True)
     code = models.CharField(max_length=255, blank=True, db_column='pri_code')
     pri_libelle = models.CharField(max_length=255, blank=True)
-    pri_prix_eur = models.IntegerField(null=True, blank=True)
     pri_note = models.TextField(blank=True)
-    pri_object_type = models.IntegerField(null=True, blank=True)
-    pri_prix_usd = models.IntegerField(null=True, blank=True)
-    pri_prix_gbp = models.IntegerField(null=True, blank=True)
+    object_type = models.IntegerField(null=True, blank=True, db_column='pri_object_type')
+    prix_eur = models.IntegerField(null=True, blank=True, db_column='pri_prix_eur')
+    prix_usd = models.IntegerField(null=True, blank=True, db_column='pri_prix_usd')
+    prix_gbp = models.IntegerField(null=True, blank=True, db_column='pri_prix_gbp')
+
     class Meta:
         db_table = u'prix'
   
@@ -738,13 +740,7 @@ class ProfilSessions(models.Model):
         db_table = u'profil_sessions'
 
 
-class Paniers(models.Model):
-    paniers = models.AutoField(primary_key=True)
-    session = models.ForeignKey(ProfilSessions,  db_column='pa_user_session', to_field='session_id')
-    pa_date_start = models.DateTimeField(null=True, blank=True)
-    pa_date_end = models.DateTimeField(null=True, blank=True)
-    class Meta:
-        db_table = u'paniers'
+
 
 class CountryIp(models.Model):
     country_ip = models.IntegerField(primary_key=True)
@@ -770,12 +766,27 @@ class CountryIsoEn(models.Model):
 class Credits(models.Model):
     credits = models.IntegerField(primary_key=True)
     cre_libelle_fr = models.CharField(max_length=255, blank=True)
-    cre_nb_credit = models.IntegerField(null=True, blank=True)
-    cre_prix = models.IntegerField(null=True, blank=True)
-    cre_validite = models.IntegerField(null=True, blank=True)
+    nb_credit = models.IntegerField(null=True, blank=True, db_column='cre_nb_credit')
+    prix = models.ForeignKey(Prix, null=True, blank=True, db_column='cre_prix')
+    validite = models.IntegerField(null=True, blank=True, db_column='cre_validite')
     cre_libelle_en = models.CharField(max_length=255, blank=True)
     class Meta:
         db_table = u'credits'
+
+
+class PortefeuilleCredit(models.Model):
+    portefeuille_credit = models.AutoField(primary_key=True)
+    user_id = models.IntegerField(db_column='pc_user_id')
+    nb_credit = models.IntegerField(db_column='pc_nb_credit')
+    currency = models.CharField(max_length=9, db_column='pc_currency')
+    unit_amount = models.FloatField(null=True, blank=True, db_column='pc_unit_amount')
+    exchange_rate = models.FloatField(null=True, blank=True, db_column='pc_exchange_rate')
+    created = models.DateTimeField(null=True, blank=True, db_column='pc_created')
+    modified = models.DateTimeField(null=True, blank=True, db_column='pc_modified')
+    class Meta:
+        db_table = u'portefeuille_credit'
+
+
 
 class Currency(models.Model):
     currency = models.IntegerField(primary_key=True)
@@ -906,20 +917,67 @@ class Newsletter(models.Model):
     class Meta:
         db_table = u'newsletter'
 
-class ValidatedOrdersManager(models.Manager):
+
+class Paniers(models.Model):
+    paniers = models.AutoField(primary_key=True)
+    session = models.ForeignKey(ProfilSessions,  db_column='pa_user_session', to_field='session_id')
+    pa_date_start = models.DateTimeField(null=True, blank=True)
+    pa_date_end = models.DateTimeField(null=True, blank=True)
+    class Meta:
+        db_table = u'paniers'
+
+class PanierItems(models.Model):
+    panier_items = models.AutoField(primary_key=True)
+    object_id = models.IntegerField(null=True, blank=True, db_column='pi_object_id')
+    object_type = models.IntegerField(null=True, blank=True, db_column='pi_object_type')
+    panier = models.ForeignKey(Paniers, null=True, blank=True, db_column='pi_panier_id')
+    pi_date_update = models.DateTimeField(null=True, blank=True)
+    date_suppr = models.DateTimeField(null=True, blank=True, db_column='pi_date_suppr')
+    pi_date_dl = models.DateTimeField(db_column='pi_date_DL') # Field name made lowercase.
+    pi_object_official_current_price = models.FloatField()
+    pi_objet_real_current_price = models.FloatField()
+    class Meta:
+        db_table = u'panier_items'
+
+
+
+class MyQuerySet(QuerySet):
+    """
+    Alll thid methods can be used both on the queryset and on the manager
+    """
+    def with_mdx_credits(self):
+        return self.filter(raw_datas='CREDIT_MONDOMIX')
+
+    def with_currency(self):
+        return self.filter(currency__isnull=False)
+
+    def exclude_free_object(self):
+        return self.exclude(raw_datas='FREE OBJECT')
+
+
+class QuerySetManager(models.Manager):
+
+    def get_query_set(self):
+        return MyQuerySet(self.model)
+		
+    def __getattr__(self, attr, *args):
+        return getattr(self.get_query_set(), attr, *args)
+
+class ValidatedOrdersManager(QuerySetManager):
     """
     Return all validated orders 
     """
     def get_query_set(self):
         return super(ValidatedOrdersManager, self).get_query_set()\
-        .filter(models.Q(payment_status='Completed') | models.Q(payment_status='Canceled_Reversal'))\
-        .filter(validation_date__isnull=False)
+                   .filter(models.Q(payment_status='Completed') | models.Q(payment_status='Canceled_Reversal'))\
+                   .filter(validation_date__isnull=False)
 
+    
 class Orders(models.Model):
 
     orders = models.AutoField(primary_key=True)
     user_id = models.IntegerField(null=True, blank=True, db_column='ord_user_id')
-    panier_id = models.IntegerField(db_column='ord_cart_id', null=True)
+    panier = models.ForeignKey(Paniers, db_column='ord_cart_id', null=True)
     ord_price = models.FloatField(null=True, blank=True)
     ord_status = models.CharField(max_length=75, null=True, blank=True)
     pp_txn_id = models.CharField(max_length=75, null=True, blank=True)
@@ -928,35 +986,25 @@ class Orders(models.Model):
     pp_payer_status = models.CharField(max_length=75, blank=True, null=True, )
     pp_mc_gross = models.FloatField(null=True, blank=True)
     pp_mc_fee = models.FloatField(null=True, blank=True)
-    pp_mc_currency = models.CharField(max_length=9, null=True, blank=True)
+    currency = models.CharField(max_length=9, null=True, blank=True, db_column='pp_mc_currency')
     pp_residence_country = models.CharField(null=True, max_length=9)
     pp_settle_amount = models.FloatField(null=True)
-    pp_exchange_rate = models.FloatField(null=True)
+    exchange_rate = models.FloatField(null=True, db_column='pp_exchange_rate')
     pp_reason_code = models.CharField(null=True, max_length=255)
     pp_pending_reason = models.CharField(null=True, max_length=255)
-    pp_raw_datas = models.TextField(null=True, blank=True)
+    raw_datas = models.TextField(null=True, blank=True, db_column='pp_raw_datas')
     ord_created = models.DateTimeField(null=True, blank=True)
     ord_modified = models.DateTimeField(null=True, blank=True)
     validation_date = models.DateTimeField(null=True, blank=True, db_column='ord_validated')
     
+    
     objects = models.Manager()
-    validated_objects = ValidatedOrdersManager()
+    validated_orders = ValidatedOrdersManager()
     
     class Meta:
         db_table = u'orders'
 
-class PanierItems(models.Model):
-    panier_items = models.AutoField(primary_key=True)
-    object_id = models.IntegerField(null=True, blank=True, db_column='pi_object_id')
-    object_type = models.IntegerField(null=True, blank=True, db_column='pi_object_type')
-    panier_id = models.IntegerField(null=True, blank=True, db_column='pi_panier_id')
-    pi_date_update = models.DateTimeField(null=True, blank=True)
-    date_suppr = models.DateTimeField(null=True, blank=True, db_column='pi_date_suppr')
-    pi_date_dl = models.DateTimeField(db_column='pi_date_DL') # Field name made lowercase.
-    pi_object_official_current_price = models.FloatField()
-    pi_objet_real_current_price = models.FloatField()
-    class Meta:
-        db_table = u'panier_items'
+
 
 class PanierItemsFinance(models.Model):
     panier_items_finance = models.IntegerField(primary_key=True)
@@ -1021,10 +1069,10 @@ class PrixHistorique(models.Model):
         db_table = u'prix_historique'
 
 class Profil(models.Model):
-    profil = models.IntegerField(primary_key=True)
-    pro_wallet_mdx_solde = models.IntegerField(null=True, blank=True)
-    pro_wallet_clb_solde = models.IntegerField(null=True, blank=True)
-    pro_mondomix_id = models.IntegerField(null=True, blank=True)
+    profil = models.AutoField(primary_key=True)
+    mdx_solde = models.IntegerField(null=True, blank=True, db_column='pro_wallet_mdx_solde')
+    clb_solde = models.IntegerField(null=True, blank=True, db_column='pro_wallet_clb_solde')
+    mondomix_id = models.IntegerField(null=True, blank=True, db_column='pro_mondomix_id')
     class Meta:
         db_table = u'profil'
 

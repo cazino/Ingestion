@@ -1,0 +1,1 @@
+from idoltest import *
