@@ -184,7 +184,7 @@ class TestDeliveryImage(TestCase):
         self.assertEqual(image1, image2)
 
 
-class TestIDOLDeliveryBatch1(TestCase):
+class TestIDOLDelivery1(TestCase):
         
     def setUp(self):
         self.path = TEST_COMMON  + '/batch1/3596971288129'
@@ -312,7 +312,7 @@ class TestIDOLDeliveryBatch1(TestCase):
         self.assertEqual(delivery1, delivery2)
 
 
-class TestIDOLDeliveryBatch2(TestCase):
+class TestIDOLDelivery2(TestCase):
 
     def setUp(self):
         self.delivery_path = TEST_COMMON  + u'/batch2/3300450000368'
@@ -325,6 +325,55 @@ class TestIDOLDeliveryBatch2(TestCase):
         self.assertEqual(expected_audio_file, (self.idol_delivery.tracks[0].audio_files['normal']))
         
         
+class TestCompil1Delivery(TestCase):
+
+    def setUp(self):
+        self.delivery_path = TEST_COMMON  + u'/batch_compil1/3700360703968'
+        self.delivery = IDOLDelivery(self.delivery_path)
+
+        # Expected datas
+        artist = None
+        label = DeliveryLabel(pk=44, name=u"Kitsuné")
+        territories = tuple(['AD', 'AL', 'AT', 'AZ', 'BA', 'BE', 'BG', 'BY', 'CH', 'CZ', 'DE', 'DK', 'EE', 'ES', 'FI',
+                             'FO', 'FR', 'GB', 'GI', 'GR', 'HR', 'HU', 'IE', 'IS', 'IT', 'LI', 'LT', 'LU', 'LV', 'MC', 
+                             'MD', 'MK', 'MT', 'NL', 'NO', 'PL', 'PT', 'RO', 'RU', 'SE', 'SI', 'SJ', 'SK', 'SM', 'UA', 
+                             'VA'])
+        release = DeliveryRelease(pk=774, title=u'Kitsuné Maison Compilation', territories=territories,
+                                  upc=3700360703968, publish_date=datetime.strptime('2005-10-03', '%Y-%m-%d').date(),
+                                  publish_date_digital=datetime.strptime('2007-03-05', '%Y-%m-%d').date(), price=u'B0',
+                                  compil=True)
+        release.label = label
+        release.artist = artist
+        label.release = release
+        self.expected_release = release
+        self.expected_artist = artist
+        self.expected_label = label
+        self.expected_styles = [DeliveryStyle(name="Electronique : Electro, House"),]
+
+    def test_artist(self):
+        self.assertEqual(self.expected_artist, self.delivery.artist)
+
+    def test_label(self):
+        self.assertEqual(self.expected_label, self.delivery.label)
+        
+    def test_styles(self):
+        self.assertEqual(self.expected_styles, self.delivery.styles)
+
+    def test_release(self):
+        self.assertEqual(self.expected_release, self.delivery.release)
+
+    def test_track_1(self):
+        expected_track = DeliveryTrack(pk=9113, title=u'Au revoir Simone - Backyards of our neighbors', 
+                                       isrc='FRU700500022', 
+                                       disc_number=1, track_number=1, price='S10', bundle_only=True,
+                                       composer='Au revoir Simone',
+                                       author='Au revoir Simone')
+        produced_track = self.delivery.tracks[0]
+        produced_track.audio_files = None
+        self.assertEqual(expected_track, produced_track)
+
+
+
 class AbstractBatchTest(TestCase):
 
     def setUp(self):
@@ -519,99 +568,18 @@ class TestBatchUpdate(AbstractBatchTest):
         self.assertEqual(set([IDOLDelivery(self.directory + '/3300450000368'),]), self.batch.bad_deliveries())
     
 
-class TestCompil1DeliveryBatch(TestCase):
+class TestBatchWhithCompil(AbstractBatchTest):
+
+    directory = TEST_COMMON + '/batch_compil3'
 
     def setUp(self):
-        self.delivery_path = TEST_COMMON  + u'/batch_compil1/3700360703968'
-        self.delivery = IDOLDelivery(self.delivery_path)
+        super(TestBatchWhithCompil, self).setUp()
 
-        # Expected datas
-        artist = None
-        label = DeliveryLabel(pk=44, name=u"Kitsuné")
-        territories = tuple(['AD', 'AL', 'AT', 'AZ', 'BA', 'BE', 'BG', 'BY', 'CH', 'CZ', 'DE', 'DK', 'EE', 'ES', 'FI',
-                             'FO', 'FR', 'GB', 'GI', 'GR', 'HR', 'HU', 'IE', 'IS', 'IT', 'LI', 'LT', 'LU', 'LV', 'MC', 
-                             'MD', 'MK', 'MT', 'NL', 'NO', 'PL', 'PT', 'RO', 'RU', 'SE', 'SI', 'SJ', 'SK', 'SM', 'UA', 
-                             'VA'])
-        release = DeliveryRelease(pk=774, title=u'Kitsuné Maison Compilation', territories=territories,
-                                  upc=3700360703968, publish_date=datetime.strptime('2005-10-03', '%Y-%m-%d').date(),
-                                  publish_date_digital=datetime.strptime('2007-03-05', '%Y-%m-%d').date(), price=u'B0',
-                                  compil=True)
-        release.label = label
-        release.artist = artist
-        label.release = release
-        self.expected_release = release
-        self.expected_artist = artist
-        self.expected_label = label
-        self.expected_styles = [DeliveryStyle(name="Electronique : Electro, House"),]
-
-    def test_artist(self):
-        self.assertEqual(self.expected_artist, self.delivery.artist)
-
-    def test_label(self):
-        self.assertEqual(self.expected_label, self.delivery.label)
-        
-    def test_styles(self):
-        self.assertEqual(self.expected_styles, self.delivery.styles)
-
-    def test_release(self):
-        self.assertEqual(self.expected_release, self.delivery.release)
-
-    def test_track_1(self):
-        expected_track = DeliveryTrack(pk=9113, title=u'Au revoir Simone - Backyards of our neighbors', 
-                                       isrc='FRU700500022', 
-                                       disc_number=1, track_number=1, price='S10', bundle_only=True,
-                                       composer='Au revoir Simone',
-                                       author='Au revoir Simone')
-        produced_track = self.delivery.tracks[0]
-        produced_track.audio_files = None
-        self.assertEqual(expected_track, produced_track)
-
-
-
-
-"""
-class TestCompil2DeliveryBatch(TestCase):
-
-    def setUp(self):
-        self.delivery_path = TEST_COMMON  + u'/batch_compil2/3760153645387'
-        self.delivery = IDOLDelivery(self.delivery_path)
-
-        # Expected datas
-        artist = DeliveryArtist(pk=19240, name="Dj Gero")
-        label = DeliveryLabel(pk=101, name=u"Folistar")
-        territories = ('WW',)
-        release = DeliveryRelease(pk=3870, title=u'Auguste, Vol. 1', territories=territories,
-                                  upc=3760153645387, publish_date=datetime.strptime('2008-10-29', '%Y-%m-%d').date(),
-                                  publish_date_digital=datetime.strptime('2008-11-24', '%Y-%m-%d').date(), price=u'B0',
-                                  compil=True)
-        release.label = label
-        release.artist = artist
-        label.release = release
-        artist.release = release
-        self.expected_release = release
-        self.expected_artist = artist
-        self.expected_label = label       
-    
-    def test_artist(self):
-        self.assertEqual(self.expected_artist, self.delivery.artist)
-
-    def test_label(self):
-        self.assertEqual(self.expected_label, self.delivery.label)
+    def test_unknown_artist(self):
+        # There is no unkown artist, the delivery is a compil
+        self.assertEqual(set(), self.batch.unknown_artists())
 
     
-    def test_release(self):
-        self.assertEqual(self.expected_release, self.delivery.release)
 
-    def test_track_1(self):
-        expected_track = DeliveryTrack(pk=9113, title=u'Au revoir Simone - Backyards of our neighbors', 
-                                       isrc='FRU700500022', 
-                                       disc_number=1, track_number=1, price='S10', bundle_only=True,
-                                       composer='Au revoir Simone',
-                                       author='Au revoir Simone')
-        produced_track = self.delivery.tracks[0]
-        produced_track.audio_files = None
-        self.assertEqual(expected_track, produced_track)
-    
 
-    
-"""
+

@@ -417,13 +417,17 @@ class Batch(object):
         return res
         
     def unknown_artists(self):
+        """
+        Return unkown artists (from the database point of view) whih are not linked to a compil release
+        """
         res = []
         for delivery in list(self.good_deliveries()):
             try:
                 if delivery.artist:
                     Artist.objects.get(artistvendor__external_artist_id=delivery.artist.pk)
             except Artist.DoesNotExist:
-                res.append(delivery.artist)                
+                if not delivery.release.compil:
+                    res.append(delivery.artist)                
         return set(res)
 
     def unknown_labels(self):

@@ -18,6 +18,11 @@ class BatchShowTest(TestCase):
         batch_show = BatchShow(request)
         self.assertEqual([IDOLDelivery(self.batch_path + '/3300450000368'),], batch_show.bad_deliveries)
 
+
+
+
+
+
     
 
 
