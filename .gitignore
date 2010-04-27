@@ -6,3 +6,4 @@
 apache*
 ingestion/tests/data*
 
+!utils/credits/credits_localsettings.py
