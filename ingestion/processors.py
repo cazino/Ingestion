@@ -38,9 +38,11 @@ class ArtistProcessor(object):
     @transaction.commit_on_success    
     def _build(self):
         mapper = ArtistMapper(delivery=self.delivery, vendor=self.vendor)
+        """
         if not self.artist_form:
             assert self.delivery.release.compil, "Formulaire artiste absent"
             return mapper.create()
+        """
         create = self.artist_form.cleaned_data['create']
         if create: # Création d'un nouvel artist            
             return mapper.create(url=self.artist_form.cleaned_data['url'])

@@ -579,6 +579,8 @@ class TestBatchWhithCompil(AbstractBatchTest):
         # There is no unkown artist, the delivery is a compil
         self.assertEqual(set(), self.batch.unknown_artists())
 
+    def test_get_delivery(self):
+        self.assert_(self.batch.get_delivery(release_pk=1591))
     
 
 

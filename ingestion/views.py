@@ -14,12 +14,17 @@ from mp3.ingestion.forms import ArtistForm, LabelForm, ReleaseForm, DataFormSet
 from mp3.ingestion.utils import similar_artist, similar_artist_ajax, similar_label_ajax, similar_url_ajax
 from mp3.ingestion.utils import latin1_to_ascii, propose_url
 from mp3.ingestion.ingestion_localsettings import DEFAULT_BATCH_PATH
-
+from mp3.ingestion.metadata import naming
 
 class BatchView(object):
     
     def __init__(self, request):
-        self.batchpath = request.GET.get('batchpath', DEFAULT_BATCH_PATH)
+        if request.method == 'GET':
+            self.batchpath = request.GET.get('batchpath')
+        elif request.method == 'POST':
+            self.batchpath = request.POST.get('batchpath')
+        if 'batchpath' not in self.__dict__:
+            self.batchpath = DEFAULT_BATCH_PATH
         self.batch = Batch(self.batchpath)
         self.ArtistFormSet = formset_factory(ArtistForm, formset=DataFormSet, extra=0)
         self.LabelFormSet = formset_factory(LabelForm, formset=DataFormSet, extra=0)
@@ -64,18 +69,22 @@ class BatchProcessor(BatchView):
             for form in self.release_formset.forms:
                 delivery = self.batch.get_delivery(release_pk=form.cleaned_data['pk'])
                 vendor = Vendor.objects.get(pk=delivery.vendor_id)
-                artist = None
+                artist = None # Pour pouvoir passer None au ReleaseProcessor dans le cas d'une compil
                 # Process Artist
                 if delivery.artist:
                     try:
+                        # Artiste déjà connu
                         artist = Artist.objects.get(artistvendor__external_artist_id=delivery.artist.pk)
                     except Artist.DoesNotExist:
                         artist_form = self.artist_formset.get_by_pk(delivery.artist.pk)
-                        delivery_artist = delivery.artist
-                        artist_processor = ArtistProcessor(delivery=delivery, artist_form=artist_form, 
+                        if artist_form:
+                            artist_processor = ArtistProcessor(delivery=delivery, artist_form=artist_form, 
                                                            vendor=vendor)
-                        artist = artist_processor.build()
-                
+                            artist = artist_processor.build()
+                        else:
+                            # Si pas de formulaire et artiste inconnu -> compilation, c'est le release processor 
+                            # qui créera l'artiste
+                            pass
                 # Process Label
                 try:
                     label = Label.objects.get(labelvendor__external_label_id=delivery.label.pk)
@@ -85,11 +94,12 @@ class BatchProcessor(BatchView):
                     label_processor = LabelProcessor(delivery=delivery, label_form=label_form, vendor=vendor)
                     label = label_processor.build()
                 # Process Release                    
-                if label and (not delivery.artist or artist):
+                if label:
                     disc = Disc.objects.get(status='default')
                     release_processor = ReleaseProcessor(delivery=delivery, release_form=form, artist=artist,
                                                          label=label, disc=disc, vendor=vendor)
-                    album = release_processor.build()                
+                    album = release_processor.build()
+                    
 
                 
 def batch_view(request):
