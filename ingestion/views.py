@@ -19,12 +19,7 @@ from mp3.ingestion.metadata import naming
 class BatchView(object):
     
     def __init__(self, request):
-        if request.method == 'GET':
-            self.batchpath = request.GET.get('batchpath')
-        elif request.method == 'POST':
-            self.batchpath = request.POST.get('batchpath')
-        if 'batchpath' not in self.__dict__:
-            self.batchpath = DEFAULT_BATCH_PATH
+        self.batchpath = request.GET.get('batchpath') or request.POST.get('batchpath') or DEFAULT_BATCH_PATH
         self.batch = Batch(self.batchpath)
         self.ArtistFormSet = formset_factory(ArtistForm, formset=DataFormSet, extra=0)
         self.LabelFormSet = formset_factory(LabelForm, formset=DataFormSet, extra=0)
