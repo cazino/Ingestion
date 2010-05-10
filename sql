@@ -42,9 +42,9 @@ CREATE TABLE `prix` (
     `pri_condition` varchar(255) NOT NULL,
     `pri_code` varchar(255) NOT NULL,
     `pri_libelle` varchar(255) NOT NULL,
-    `pri_prix_eur` integer,
     `pri_note` longtext NOT NULL,
     `pri_object_type` integer,
+    `pri_prix_eur` integer,
     `pri_prix_usd` integer,
     `pri_prix_gbp` integer
 )
@@ -111,16 +111,16 @@ CREATE TABLE `artist_vendor` (
     UNIQUE (`vendor_id`, `external_artist_id`)
 )
 ;
-ALTER TABLE `artist_vendor` ADD CONSTRAINT `vendor_id_refs_vendor_53df447c` FOREIGN KEY (`vendor_id`) REFERENCES `vendor` (`vendor`);
-ALTER TABLE `artist_vendor` ADD CONSTRAINT `artist_id_refs_artist_1aa5c1c1` FOREIGN KEY (`artist_id`) REFERENCES `artist` (`artist`);
+ALTER TABLE `artist_vendor` ADD CONSTRAINT `artist_id_refs_artist_e55a3e3f` FOREIGN KEY (`artist_id`) REFERENCES `artist` (`artist`);
+ALTER TABLE `artist_vendor` ADD CONSTRAINT `vendor_id_refs_vendor_ac20bb84` FOREIGN KEY (`vendor_id`) REFERENCES `vendor` (`vendor`);
 CREATE TABLE `artist_country` (
     `artist_country` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
     `ac_artist_id` integer,
     `ac_country_id` integer
 )
 ;
+ALTER TABLE `artist_country` ADD CONSTRAINT `ac_artist_id_refs_artist_8abecfc6` FOREIGN KEY (`ac_artist_id`) REFERENCES `artist` (`artist`);
 ALTER TABLE `artist_country` ADD CONSTRAINT `ac_country_id_refs_country_f2c5e0c` FOREIGN KEY (`ac_country_id`) REFERENCES `country` (`country`);
-ALTER TABLE `artist_country` ADD CONSTRAINT `ac_artist_id_refs_artist_7541303a` FOREIGN KEY (`ac_artist_id`) REFERENCES `artist` (`artist`);
 CREATE TABLE `label` (
     `label` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
     `lab_name` varchar(255) NOT NULL UNIQUE,
@@ -141,8 +141,8 @@ CREATE TABLE `label_vendor` (
     UNIQUE (`vendor_id`, `external_label_id`)
 )
 ;
-ALTER TABLE `label_vendor` ADD CONSTRAINT `vendor_id_refs_vendor_353f6600` FOREIGN KEY (`vendor_id`) REFERENCES `vendor` (`vendor`);
-ALTER TABLE `label_vendor` ADD CONSTRAINT `label_id_refs_label_1c8f7beb` FOREIGN KEY (`label_id`) REFERENCES `label` (`label`);
+ALTER TABLE `label_vendor` ADD CONSTRAINT `label_id_refs_label_e3708415` FOREIGN KEY (`label_id`) REFERENCES `label` (`label`);
+ALTER TABLE `label_vendor` ADD CONSTRAINT `vendor_id_refs_vendor_cac09a00` FOREIGN KEY (`vendor_id`) REFERENCES `vendor` (`vendor`);
 CREATE TABLE `album` (
     `album` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
     `alb_title` varchar(255) NOT NULL,
@@ -203,10 +203,10 @@ CREATE TABLE `album` (
     `alb_ioda_id` integer
 )
 ;
-ALTER TABLE `album` ADD CONSTRAINT `alb_vendor_id_refs_vendor_62a4ec17` FOREIGN KEY (`alb_vendor_id`) REFERENCES `vendor` (`vendor`);
+ALTER TABLE `album` ADD CONSTRAINT `alb_label_id_refs_label_ee1280e6` FOREIGN KEY (`alb_label_id`) REFERENCES `label` (`label`);
+ALTER TABLE `album` ADD CONSTRAINT `alb_vendor_id_refs_vendor_9d5b13e9` FOREIGN KEY (`alb_vendor_id`) REFERENCES `vendor` (`vendor`);
 ALTER TABLE `album` ADD CONSTRAINT `alb_artist_id_refs_artist_6ee2db8e` FOREIGN KEY (`alb_artist_id`) REFERENCES `artist` (`artist`);
 ALTER TABLE `album` ADD CONSTRAINT `alb_prix_refs_prix_30fac930` FOREIGN KEY (`alb_prix`) REFERENCES `prix` (`prix`);
-ALTER TABLE `album` ADD CONSTRAINT `alb_label_id_refs_label_11ed7f1a` FOREIGN KEY (`alb_label_id`) REFERENCES `label` (`label`);
 CREATE TABLE `album_vendor` (
     `album_vendor` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
     `album_id` integer NOT NULL,
@@ -215,8 +215,8 @@ CREATE TABLE `album_vendor` (
     UNIQUE (`vendor_id`, `external_album_id`)
 )
 ;
-ALTER TABLE `album_vendor` ADD CONSTRAINT `vendor_id_refs_vendor_5fdc3447` FOREIGN KEY (`vendor_id`) REFERENCES `vendor` (`vendor`);
-ALTER TABLE `album_vendor` ADD CONSTRAINT `album_id_refs_album_7e77efdb` FOREIGN KEY (`album_id`) REFERENCES `album` (`album`);
+ALTER TABLE `album_vendor` ADD CONSTRAINT `album_id_refs_album_81881025` FOREIGN KEY (`album_id`) REFERENCES `album` (`album`);
+ALTER TABLE `album_vendor` ADD CONSTRAINT `vendor_id_refs_vendor_a023cbb9` FOREIGN KEY (`vendor_id`) REFERENCES `vendor` (`vendor`);
 CREATE TABLE `disk` (
     `disk` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
     `dik_name` varchar(255),
@@ -240,8 +240,8 @@ CREATE TABLE `image_file` (
     `ima_usage` varchar(60) NOT NULL
 )
 ;
-ALTER TABLE `image_file` ADD CONSTRAINT `ima_artist_id_refs_artist_685e1b48` FOREIGN KEY (`ima_artist_id`) REFERENCES `artist` (`artist`);
 ALTER TABLE `image_file` ADD CONSTRAINT `ima_album_id_refs_album_1e780577` FOREIGN KEY (`ima_album_id`) REFERENCES `album` (`album`);
+ALTER TABLE `image_file` ADD CONSTRAINT `ima_artist_id_refs_artist_97a1e4b8` FOREIGN KEY (`ima_artist_id`) REFERENCES `artist` (`artist`);
 ALTER TABLE `image_file` ADD CONSTRAINT `ima_disk_id_refs_disk_79dcbd84` FOREIGN KEY (`ima_disk_id`) REFERENCES `disk` (`disk`);
 CREATE TABLE `track` (
     `track` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -267,15 +267,15 @@ CREATE TABLE `track` (
     `tra_composer` varchar(255) NOT NULL
 )
 ;
-ALTER TABLE `track` ADD CONSTRAINT `tr_prix_refs_prix_2e363e98` FOREIGN KEY (`tr_prix`) REFERENCES `prix` (`prix`);
 ALTER TABLE `track` ADD CONSTRAINT `tra_album_id_refs_album_69a5beb` FOREIGN KEY (`tra_album_id`) REFERENCES `album` (`album`);
+ALTER TABLE `track` ADD CONSTRAINT `tr_prix_refs_prix_2e363e98` FOREIGN KEY (`tr_prix`) REFERENCES `prix` (`prix`);
 CREATE TABLE `track_vendor` (
     `track_vendor` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
     `track_id` integer NOT NULL UNIQUE,
     `external_track_id` integer NOT NULL
 )
 ;
-ALTER TABLE `track_vendor` ADD CONSTRAINT `track_id_refs_track_7b30435` FOREIGN KEY (`track_id`) REFERENCES `track` (`track`);
+ALTER TABLE `track_vendor` ADD CONSTRAINT `track_id_refs_track_f84cfbcb` FOREIGN KEY (`track_id`) REFERENCES `track` (`track`);
 CREATE TABLE `audio_file` (
     `audio_file` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
     `aud_filepath` varchar(255) NOT NULL,
@@ -292,8 +292,8 @@ CREATE TABLE `audio_file` (
     `aud_iodaimp_id` integer
 )
 ;
-ALTER TABLE `audio_file` ADD CONSTRAINT `aud_track_id_refs_track_3a43f48e` FOREIGN KEY (`aud_track_id`) REFERENCES `track` (`track`);
 ALTER TABLE `audio_file` ADD CONSTRAINT `aud_disk_id_refs_disk_744dedd5` FOREIGN KEY (`aud_disk_id`) REFERENCES `disk` (`disk`);
+ALTER TABLE `audio_file` ADD CONSTRAINT `aud_track_id_refs_track_c5bc0b72` FOREIGN KEY (`aud_track_id`) REFERENCES `track` (`track`);
 CREATE TABLE `actualites_disque` (
     `actualites_disque` integer NOT NULL PRIMARY KEY,
     `ad_semaine` varchar(255) NOT NULL,
@@ -304,9 +304,9 @@ CREATE TABLE `actualites_disque` (
     `ad_localisation` integer
 )
 ;
-ALTER TABLE `actualites_disque` ADD CONSTRAINT `ad_album1_refs_album_5c5f0863` FOREIGN KEY (`ad_album1`) REFERENCES `album` (`album`);
-ALTER TABLE `actualites_disque` ADD CONSTRAINT `ad_album2_refs_album_5c5f0863` FOREIGN KEY (`ad_album2`) REFERENCES `album` (`album`);
-ALTER TABLE `actualites_disque` ADD CONSTRAINT `ad_album3_refs_album_5c5f0863` FOREIGN KEY (`ad_album3`) REFERENCES `album` (`album`);
+ALTER TABLE `actualites_disque` ADD CONSTRAINT `ad_album1_refs_album_a3a0f79d` FOREIGN KEY (`ad_album1`) REFERENCES `album` (`album`);
+ALTER TABLE `actualites_disque` ADD CONSTRAINT `ad_album2_refs_album_a3a0f79d` FOREIGN KEY (`ad_album2`) REFERENCES `album` (`album`);
+ALTER TABLE `actualites_disque` ADD CONSTRAINT `ad_album3_refs_album_a3a0f79d` FOREIGN KEY (`ad_album3`) REFERENCES `album` (`album`);
 CREATE TABLE `coups_de_coeur` (
     `coups_de_coeur` integer NOT NULL PRIMARY KEY,
     `cdc_label` varchar(255) NOT NULL,
@@ -604,14 +604,6 @@ CREATE TABLE `profil_sessions` (
     `ps_country` varchar(3) NOT NULL
 )
 ;
-CREATE TABLE `paniers` (
-    `paniers` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    `pa_user_session` varchar(255) NOT NULL,
-    `pa_date_start` datetime,
-    `pa_date_end` datetime
-)
-;
-ALTER TABLE `paniers` ADD CONSTRAINT `pa_user_session_refs_ps_session_id_2db726e1` FOREIGN KEY (`pa_user_session`) REFERENCES `profil_sessions` (`ps_session_id`);
 CREATE TABLE `country_ip` (
     `country_ip` integer NOT NULL PRIMARY KEY,
     `ci_ip_from` double precision NOT NULL,
@@ -634,6 +626,18 @@ CREATE TABLE `credits` (
     `cre_prix` integer,
     `cre_validite` integer,
     `cre_libelle_en` varchar(255) NOT NULL
+)
+;
+ALTER TABLE `credits` ADD CONSTRAINT `cre_prix_refs_prix_b31818bd` FOREIGN KEY (`cre_prix`) REFERENCES `prix` (`prix`);
+CREATE TABLE `portefeuille_credit` (
+    `portefeuille_credit` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    `pc_user_id` integer NOT NULL,
+    `pc_nb_credit` integer NOT NULL,
+    `pc_currency` varchar(9) NOT NULL,
+    `pc_unit_amount` double precision,
+    `pc_exchange_rate` double precision,
+    `pc_created` datetime,
+    `pc_modified` datetime
 )
 ;
 CREATE TABLE `currency` (
@@ -751,6 +755,27 @@ CREATE TABLE `newsletter` (
     `nl_imported` varchar(3) NOT NULL
 )
 ;
+CREATE TABLE `paniers` (
+    `paniers` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    `pa_user_session` varchar(255) NOT NULL,
+    `pa_date_start` datetime,
+    `pa_date_end` datetime
+)
+;
+ALTER TABLE `paniers` ADD CONSTRAINT `pa_user_session_refs_ps_session_id_d248d91f` FOREIGN KEY (`pa_user_session`) REFERENCES `profil_sessions` (`ps_session_id`);
+CREATE TABLE `panier_items` (
+    `panier_items` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    `pi_object_id` integer,
+    `pi_object_type` integer,
+    `pi_panier_id` integer,
+    `pi_date_update` datetime,
+    `pi_date_suppr` datetime,
+    `pi_date_DL` datetime NOT NULL,
+    `pi_object_official_current_price` double precision NOT NULL,
+    `pi_objet_real_current_price` double precision NOT NULL
+)
+;
+ALTER TABLE `panier_items` ADD CONSTRAINT `pi_panier_id_refs_paniers_6c3b5bfe` FOREIGN KEY (`pi_panier_id`) REFERENCES `paniers` (`paniers`);
 CREATE TABLE `orders` (
     `orders` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
     `ord_user_id` integer,
@@ -775,18 +800,7 @@ CREATE TABLE `orders` (
     `ord_validated` datetime
 )
 ;
-CREATE TABLE `panier_items` (
-    `panier_items` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    `pi_object_id` integer,
-    `pi_object_type` integer,
-    `pi_panier_id` integer,
-    `pi_date_update` datetime,
-    `pi_date_suppr` datetime,
-    `pi_date_DL` datetime NOT NULL,
-    `pi_object_official_current_price` double precision NOT NULL,
-    `pi_objet_real_current_price` double precision NOT NULL
-)
-;
+ALTER TABLE `orders` ADD CONSTRAINT `ord_cart_id_refs_paniers_83ac4327` FOREIGN KEY (`ord_cart_id`) REFERENCES `paniers` (`paniers`);
 CREATE TABLE `panier_items_finance` (
     `panier_items_finance` integer NOT NULL PRIMARY KEY,
     `pif_panier_item` integer NOT NULL,
@@ -829,7 +843,7 @@ CREATE TABLE `prix_historique` (
 )
 ;
 CREATE TABLE `profil` (
-    `profil` integer NOT NULL PRIMARY KEY,
+    `profil` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
     `pro_wallet_mdx_solde` integer,
     `pro_wallet_clb_solde` integer,
     `pro_mondomix_id` integer
@@ -998,5 +1012,8 @@ CREATE INDEX `carrousels_car_album17` ON `carrousels` (`car_album17`);
 CREATE INDEX `carrousels_car_album18` ON `carrousels` (`car_album18`);
 CREATE INDEX `carrousels_car_album19` ON `carrousels` (`car_album19`);
 CREATE INDEX `carrousels_car_album20` ON `carrousels` (`car_album20`);
+CREATE INDEX `credits_cre_prix` ON `credits` (`cre_prix`);
 CREATE INDEX `paniers_pa_user_session` ON `paniers` (`pa_user_session`);
+CREATE INDEX `panier_items_pi_panier_id` ON `panier_items` (`pi_panier_id`);
+CREATE INDEX `orders_ord_cart_id` ON `orders` (`ord_cart_id`);
 COMMIT;

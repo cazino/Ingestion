@@ -212,7 +212,7 @@ class AudioFileMapperTest(TestCase):
         track = Track.objects.create(title='my_track', album=album)
         audiofile_mapper = AudioFileMapper(delivery_audiofile=self.delivery_audiofile, track=track, disc=self.disc)
     
-        filename = artist.name + '_' + album.title + '_' + track.title + '.mp3'
+        filename = artist.name + '__' + track.title + '.mp3'
         path = "/albums/%s/mp3/%s" % (album.pk, filename)
         produced_audiofile = audiofile_mapper.create()
         self.assertEqual(path, produced_audiofile.path)
@@ -227,19 +227,29 @@ class AudioFileMapperTest(TestCase):
         artist = Artist.objects.create(name='tutu tutu')
         album = Album.objects.create(title='tata tata', artist=artist)
         track = Track.objects.create(title='my track', album=album)
-        path = "/albums/%s/mp3/tutu_tutu_tata_tata_my_track.mp3" % (album.pk,)
+        path = "/albums/%s/mp3/tutu_tutu__my_track.mp3" % (album.pk,)
         audiofile_mapper = AudioFileMapper(delivery_audiofile=self.delivery_audiofile, track=track, disc=self.disc)
         produced_audiofile = audiofile_mapper.create()
         self.assertEqual(path, produced_audiofile.path)
 
     def test_filename_remove_non_ascii(self):
-        artist = Artist.objects.create(name='tutu tutu')
-        album = Album.objects.create(title=u'téta tata', artist=artist)
-        track = Track.objects.create(title='my track', album=album)
-        path = "/albums/%s/mp3/tutu_tutu_teta_tata_my_track.mp3" % (album.pk,)
+        artist = Artist.objects.create(name=u'téta tata')
+        album = Album.objects.create(title=u'tutu tutu', artist=artist)
+        track = Track.objects.create(title=u'my track', album=album)
+        path = "/albums/%s/mp3/teta_tata__my_track.mp3" % (album.pk,)
         audiofile_mapper = AudioFileMapper(delivery_audiofile=self.delivery_audiofile, track=track, disc=self.disc)
         produced_audiofile = audiofile_mapper.create()
         self.assertEqual(path, produced_audiofile.path)
+
+    def test_cut_audiofilename_when_too_long(self):
+        artist = Artist.objects.create(name='aaaaaaaaaabbbbbbbbbbccccccccccdddddddddd')
+        album = Album.objects.create(title=u'téta tata', artist=artist)
+        track = Track.objects.create(title='aaaaaaaaaabbbbbbbbbbccccccccccdddddddddd', album=album)
+        path = "/albums/%s/mp3/aaaaaaaaaabbbbbbbbbbcccccccccc__aaaaaaaaaabbbbbbbbbbcccccccccc.mp3" % (album.pk,)
+        audiofile_mapper = AudioFileMapper(delivery_audiofile=self.delivery_audiofile, track=track, disc=self.disc)
+        produced_audiofile = audiofile_mapper.create()
+        self.assertEqual(path, produced_audiofile.path)
+
 
 class ImageFileMapperTest(TestCase):
 

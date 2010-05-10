@@ -143,10 +143,15 @@ class AudioFileMapper(object):
         elif self.delivery_audiofile.content == 'extrait':
             return 'samples'
 
+    def _create_filename(self):
+        max_length = 30
+        artist_name = self.track.album.artist.name[0:max_length]
+        track_title = self.track.title[0:max_length]
+        tmp_filename =  "%s__%s.%s" % (artist_name, track_title, self.delivery_audiofile.format)
+        return latin1_to_ascii(tmp_filename.replace(" ", "_"))
+
     def create(self):
-        tmp_filename = "%s_%s_%s.%s" % (self.track.album.artist.name, self.track.album.title, self.track.title, self.delivery_audiofile.format)
-        filename = latin1_to_ascii(tmp_filename.replace(" ", "_"))
-        path = "/albums/%s/%s/%s" % (self.track.album.pk, self._sub_dir_name(), filename)
+        path = "/albums/%s/%s/%s" % (self.track.album.pk, self._sub_dir_name(), self._create_filename())
         return AudioFile.objects.create(path=path, size=self.delivery_audiofile.size, content=self.delivery_audiofile.content,
                                         bitrate=self.delivery_audiofile.bitrate, duration=self.delivery_audiofile.duration, disc=self.disc,
                                         format=self.delivery_audiofile.format, track=self.track)    

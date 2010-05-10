@@ -1,0 +1,27 @@
+CREATE TABLE `portefeuille_credit` (
+    `portefeuille_credit` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    `pc_user_id` integer NOT NULL,
+    `pc_order_id` integer NOT NULL,
+    `pc_nb_credit` integer NOT NULL,
+    `pc_currency` varchar(9) NOT NULL,
+    `pc_unit_amount` double precision,
+    `pc_exchange_rate` double precision,
+    `pc_created` datetime,
+    `pc_modified` datetime
+) ENGINE=INNODB;
+
+CREATE INDEX `portefeuille_credit_user_id` ON `portefeuille_credit` (`pc_user_id`);
+CREATE INDEX `portefeuille_credit_nb_credit` ON `portefeuille_credit` (`pc_nb_credit`);
+CREATE INDEX `portefeuille_credit_order_id` ON `portefeuille_credit` (`pc_order_id`);
+
+/* A verifier  
+
+Old: 30  New: None, User: 75859
+Old: 1  New: None, User: 78948
+ 
+*/ 
+UPDATE `profil` SET `pro_wallet_mdx_solde` = '0' WHERE `pro_mondomix_id` = '75859';
+UPDATE `profil` SET `pro_wallet_mdx_solde` = '0' WHERE `pro_mondomix_id` = '78948';
+
+
+

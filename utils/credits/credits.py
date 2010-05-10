@@ -35,6 +35,7 @@ def rattrape():
 
                 # Insertion dans portefeuille crédit
                 PortefeuilleCredit.objects.create(user_id=profil.mondomix_id,
+                                                  order_id=order.pk,
                                                   nb_credit=nb_credit_to_insert,
                                                   currency=order.currency,
                                                   unit_amount=(float(prix_package)/100/package_credit.nb_credit),

@@ -375,7 +375,7 @@ class AudioFileProcessorTest(TestCase):
         delivery_audiofile = DeliveryAudioFile(format='mp3', content='piste', path=self.file_path)
         audiofile_processor = AudioFileProcessor(disc=self.disc, track=track, delivery_audiofile=delivery_audiofile)
         # Expected filepath
-        expected_filename = "%s_%s_%s.mp3" % (artist.name, album.title, track.title)
+        expected_filename = "%s__%s.mp3" % (artist.name, track.title)
         expected_audiofile_directory = os.path.join(album.full_path(self.disc), 'mp3')
         expected_audiofile_path = os.path.join(expected_audiofile_directory, expected_filename)
         #Build the directory
@@ -393,7 +393,7 @@ class AudioFileProcessorTest(TestCase):
         delivery_audiofile = DeliveryAudioFile(format='mp3', content='extrait', path=self.file_path)
         audiofile_processor = AudioFileProcessor(disc=self.disc, track=track, delivery_audiofile=delivery_audiofile)
         # Expected filepath
-        expected_filename = "%s_%s_%s.mp3" % (artist.name, album.title, track.title)
+        expected_filename = "%s__%s.mp3" % (artist.name, track.title)
         expected_audiofile_directory = os.path.join(album.full_path(self.disc), 'samples')
         expected_audiofile_path = os.path.join(expected_audiofile_directory, expected_filename)
         #Build the directory

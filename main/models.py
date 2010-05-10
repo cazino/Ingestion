@@ -777,6 +777,7 @@ class Credits(models.Model):
 class PortefeuilleCredit(models.Model):
     portefeuille_credit = models.AutoField(primary_key=True)
     user_id = models.IntegerField(db_column='pc_user_id')
+    order_id = models.IntegerField(db_column='pc_order_id')
     nb_credit = models.IntegerField(db_column='pc_nb_credit')
     currency = models.CharField(max_length=9, db_column='pc_currency')
     unit_amount = models.FloatField(null=True, blank=True, db_column='pc_unit_amount')
